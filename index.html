@@ -541,7 +541,7 @@
             }
             
             // 处理相克规则
-            if (character.spRule && character.spRule !== '无') {
+            if (character.spRule) {
                 console.log('显示相克规则');
                 spRuleSection.style.display = 'block';
                 modalSPRule.innerHTML = character.spRule.replace(/\n/g, '<br>');
