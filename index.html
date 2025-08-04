@@ -527,18 +527,26 @@
             modalAbility.innerHTML = character.ability.replace(/\n/g, '<br>');
             
             // 处理上帝小贴士
+            console.log('角色名称:', character.name);
+            console.log('hint字段:', character.hint);
+            console.log('spRule字段:', character.spRule);
+            
             if (character.hint) {
+                console.log('显示上帝小贴士');
                 hintSection.style.display = 'block';
                 modalHint.innerHTML = character.hint.replace(/\n/g, '<br>');
             } else {
+                console.log('隐藏上帝小贴士');
                 hintSection.style.display = 'none';
             }
             
             // 处理相克规则
             if (character.spRule && character.spRule !== '无') {
+                console.log('显示相克规则');
                 spRuleSection.style.display = 'block';
                 modalSPRule.innerHTML = character.spRule.replace(/\n/g, '<br>');
             } else {
+                console.log('隐藏相克规则');
                 spRuleSection.style.display = 'none';
             }
             
