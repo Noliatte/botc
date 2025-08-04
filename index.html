@@ -216,8 +216,19 @@
             color: #2c3e50;
             margin-bottom: 1rem;
             font-size: 1.2rem;
-            border-left: 3px solid #3498db;
-            padding-left: 0.8rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .modal-section h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            background-color: #999;
+            transform: translateY(-50%) rotate(45deg);
         }
 
         .modal-ability {
@@ -563,7 +574,8 @@
                 const searchTerm = e.target.value.toLowerCase();
                 const filteredCharacters = characters.filter(character => 
                     character.name.toLowerCase().includes(searchTerm) ||
-                    character.ability.toLowerCase().includes(searchTerm) ||
+                    character.faction.toLowerCase().includes(searchTerm) ||
+                    character.script.toLowerCase().includes(searchTerm) ||
                     character.tags.some(tag => tag.toLowerCase().includes(searchTerm))
                 );
                 renderCharacters(filteredCharacters);
