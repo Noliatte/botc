@@ -238,6 +238,16 @@
             white-space: pre-line;
         }
 
+        .hint-text {
+            background: #fff8e1;
+            padding: 1rem;
+            border-radius: 8px;
+            line-height: 1.6;
+            border-left: 4px solid #ffa726;
+            white-space: pre-line;
+            color: #555;
+        }
+
         .flavor-text {
             background: #f8f9fa;
             padding: 1rem;
@@ -404,7 +414,14 @@
                     </div>
                 </div>
 
-                <div class="modal-section">
+                <div class="modal-section" id="hintSection" style="display: none;">
+                    <h3>上帝小贴士</h3>
+                    <div class="hint-text" id="modalHint">
+                        上帝小贴士内容将在这里显示...
+                    </div>
+                </div>
+
+                <div class="modal-section" id="spRuleSection" style="display: none;">
                     <h3>相克规则</h3>
                     <div class="sp-rule" id="modalSPRule">
                         暂无相克规则
@@ -494,6 +511,9 @@
             const modalName = document.getElementById('modalName');
             const modalFaction = document.getElementById('modalFaction');
             const modalAbility = document.getElementById('modalAbility');
+            const hintSection = document.getElementById('hintSection');
+            const modalHint = document.getElementById('modalHint');
+            const spRuleSection = document.getElementById('spRuleSection');
             const modalSPRule = document.getElementById('modalSPRule');
             const modalFlavorText = document.getElementById('modalFlavorText');
             const modalTags = document.getElementById('modalTags');
@@ -505,7 +525,23 @@
             modalName.textContent = character.name;
             modalFaction.textContent = character.faction;
             modalAbility.innerHTML = character.ability.replace(/\n/g, '<br>');
-            modalSPRule.textContent = character.spRule || '暂无相克规则';
+            
+            // 处理上帝小贴士
+            if (character.hint) {
+                hintSection.style.display = 'block';
+                modalHint.innerHTML = character.hint.replace(/\n/g, '<br>');
+            } else {
+                hintSection.style.display = 'none';
+            }
+            
+            // 处理相克规则
+            if (character.spRule && character.spRule !== '无') {
+                spRuleSection.style.display = 'block';
+                modalSPRule.innerHTML = character.spRule.replace(/\n/g, '<br>');
+            } else {
+                spRuleSection.style.display = 'none';
+            }
+            
             modalFlavorText.innerHTML = (character.flavorText || '暂无背景故事').replace(/\n/g, '<br>');
             modalTags.innerHTML = character.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
