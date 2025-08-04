@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>角色技能百科 - 快速查找角色技能与图标</title>
+    <title>血染钟楼速查百科by Noliatte</title>
     <style>
         * {
             margin: 0;
@@ -18,47 +18,11 @@
             background-color: #f5f5f5;
         }
 
-        .header {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
 
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        .nav {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .nav a:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
 
         .main-container {
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 1rem auto;
             padding: 0 2rem;
             display: grid;
             grid-template-columns: 250px 1fr;
@@ -78,28 +42,84 @@
             margin-bottom: 1rem;
             border-bottom: 2px solid #3498db;
             padding-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .sidebar h4 {
+            color: #34495e;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
         .sidebar ul {
             list-style: none;
+            margin-bottom: 1.5rem;
         }
 
         .sidebar li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .sidebar a {
             color: #555;
             text-decoration: none;
             display: block;
-            padding: 0.5rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 4px;
             transition: all 0.3s;
+            font-size: 0.9rem;
         }
 
         .sidebar a:hover {
             background-color: #f8f9fa;
             color: #3498db;
+        }
+
+        .sidebar .sub-list {
+            margin-left: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar .sub-list a {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .sidebar .sub-list a:hover {
+            background-color: #e8f4fd;
+            color: #2980b9;
+        }
+
+        .sidebar .collapsible {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .sidebar .collapsible::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .sidebar .collapsible.collapsed::after {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+
+        .sidebar .collapsible-content {
+            max-height: 500px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .sidebar .collapsible-content.collapsed {
+            max-height: 0;
         }
 
         .content {
@@ -113,44 +133,8 @@
             margin-bottom: 2rem;
         }
 
-        .search-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 0.5rem;
-            font-size: 1.2rem;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .sidebar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .sidebar-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #666;
-            -webkit-tap-highlight-color: transparent;
-        }
-
         .search-box {
-            flex: 1;
+            width: 100%;
             padding: 1rem;
             border: 2px solid #ddd;
             border-radius: 8px;
@@ -160,39 +144,6 @@
         .search-box:focus {
             outline: none;
             border-color: #3498db;
-        }
-
-        .filter-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
-        .filter-btn {
-            padding: 0.5rem 1rem;
-            border: 1px solid #ddd;
-            background: white;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-            touch-action: manipulation;
-        }
-
-        .filter-btn.active {
-            background: #3498db;
-            color: white;
-            border-color: #3498db;
-        }
-
-        .filter-btn:hover {
-            background: #f8f9fa;
-        }
-
-        .filter-btn.active:hover {
-            background: #2980b9;
         }
 
         .characters-grid {
@@ -207,17 +158,11 @@
             padding: 1.5rem;
             transition: all 0.3s;
             cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
         }
 
         .character-card:hover {
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transform: translateY(-2px);
-        }
-
-        .character-card:active {
-            transform: scale(0.98);
         }
 
         .character-header {
@@ -235,8 +180,6 @@
             align-items: center;
             justify-content: center;
             margin-right: 1rem;
-            font-size: 1.5rem;
-            color: #666;
             overflow: hidden;
         }
 
@@ -252,7 +195,7 @@
             margin-bottom: 0.25rem;
         }
 
-        .character-type {
+        .character-faction {
             color: #666;
             font-size: 0.9rem;
         }
@@ -260,12 +203,13 @@
         .character-ability {
             color: #555;
             line-height: 1.5;
+            margin-bottom: 1rem;
+            white-space: pre-line;
         }
 
         .character-tags {
             display: flex;
             gap: 0.5rem;
-            margin-top: 1rem;
             flex-wrap: wrap;
         }
 
@@ -275,29 +219,6 @@
             padding: 0.25rem 0.5rem;
             border-radius: 12px;
             font-size: 0.8rem;
-        }
-
-        /* 移动端优化 */
-        @media (hover: none) and (pointer: coarse) {
-            .character-card:hover {
-                transform: none;
-            }
-            
-            .filter-btn:hover {
-                background: white;
-            }
-            
-            .filter-btn.active:hover {
-                background: #3498db;
-            }
-        }
-
-        /* 防止移动端缩放 */
-        @media screen and (max-width: 768px) {
-            input[type="text"], 
-            input[type="search"] {
-                font-size: 16px !important;
-            }
         }
 
         .modal {
@@ -349,8 +270,6 @@
             align-items: center;
             justify-content: center;
             margin-right: 1.5rem;
-            font-size: 2rem;
-            color: #666;
             overflow: hidden;
         }
 
@@ -366,17 +285,62 @@
             margin-bottom: 0.5rem;
         }
 
-        .modal-type {
+        .modal-faction {
             color: #666;
             font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .modal-sections {
+            margin-top: 1.5rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .modal-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-left: 3px solid #3498db;
+            padding-left: 0.8rem;
         }
 
         .modal-ability {
             background: #f8f9fa;
             padding: 1rem;
             border-radius: 8px;
-            margin: 1rem 0;
             line-height: 1.6;
+            border-left: 4px solid #3498db;
+            white-space: pre-line;
+        }
+
+        .sp-rule {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            line-height: 1.6;
+            border-left: 4px solid #e74c3c;
+            white-space: pre-line;
+        }
+
+        .flavor-text {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            font-style: italic;
+            color: #666;
+            line-height: 1.6;
+            border-left: 4px solid #9b59b6;
+            white-space: pre-line;
         }
 
         .modal-tags {
@@ -393,29 +357,6 @@
                 margin: 1rem auto;
             }
             
-            .menu-toggle {
-                display: block;
-            }
-            
-            .sidebar-toggle {
-                display: block;
-            }
-            
-            .sidebar {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 280px;
-                height: 100vh;
-                z-index: 1001;
-                transition: left 0.3s ease;
-                overflow-y: auto;
-            }
-            
-            .sidebar.active {
-                left: 0;
-            }
-            
             .header-content {
                 flex-direction: column;
                 gap: 1rem;
@@ -424,11 +365,6 @@
             
             .logo {
                 font-size: 1.5rem;
-            }
-            
-            .nav {
-                flex-wrap: wrap;
-                justify-content: center;
             }
             
             .characters-grid {
@@ -443,7 +379,6 @@
             .character-icon {
                 width: 50px;
                 height: 50px;
-                font-size: 1.2rem;
             }
             
             .character-info h3 {
@@ -451,15 +386,6 @@
             }
             
             .character-ability {
-                font-size: 0.9rem;
-            }
-            
-            .filter-buttons {
-                gap: 0.5rem;
-            }
-            
-            .filter-btn {
-                padding: 0.4rem 0.8rem;
                 font-size: 0.9rem;
             }
             
@@ -491,6 +417,15 @@
             .modal-icon {
                 margin-right: 0;
                 margin-bottom: 1rem;
+            }
+            
+            .modal-sections {
+                margin-top: 1rem;
+            }
+            
+            .modal-section {
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
             }
         }
 
@@ -526,15 +461,6 @@
                 margin-bottom: 0.5rem;
             }
             
-            .filter-buttons {
-                justify-content: center;
-            }
-            
-            .filter-btn {
-                padding: 0.3rem 0.6rem;
-                font-size: 0.8rem;
-            }
-            
             .search-box {
                 padding: 0.7rem;
                 font-size: 0.8rem;
@@ -548,44 +474,40 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">血染钟楼角色能力速查</div>
-        </div>
-    </header>
+
 
     <div class="main-container">
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <h3>快速导航</h3>
-                <button class="sidebar-toggle" id="sidebarToggle">×</button>
-            </div>
-            <ul>
+        <aside class="sidebar">
+            <h3>导航</h3>
+            
+            <h4 class="collapsible" data-target="characters-section">角色</h4>
+            <ul class="collapsible-content" id="characters-section">
                 <li><a href="#all">全部角色</a></li>
                 <li><a href="#townsfolk">镇民</a></li>
                 <li><a href="#outsiders">外来者</a></li>
                 <li><a href="#minions">爪牙</a></li>
                 <li><a href="#demons">恶魔</a></li>
                 <li><a href="#travelers">旅行者</a></li>
-                <li><a href="#legend">传奇角色</a></li>
+                <li><a href="#legends">传奇角色</a></li>
             </ul>
+
+            <h4 class="collapsible" data-target="scripts-section">剧本</h4>
+            <ul class="collapsible-content" id="scripts-section">
+                <li><a href="#trouble-brewing">暗流涌动</a></li>
+                <li><a href="#bad-moon-rising">黯月初升</a></li>
+                <li><a href="#sects-and-violets">梦陨春宵</a></li>
+                <li><a href="#experimental">实验型角色</a></li>
+            </ul>
+
+            <h4>行动顺序</h4>
+
+            <h4>魔典记录</h4>
+            
         </aside>
 
         <main class="content">
             <div class="search-section">
-                <div class="search-header">
-                    <button class="menu-toggle" id="menuToggle">☰</button>
-                    <input type="text" class="search-box" placeholder="搜索角色名称、所在剧本、能力..." id="searchInput">
-                </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">全部</button>
-                    <button class="filter-btn" data-filter="townsfolk">镇民</button>
-                    <button class="filter-btn" data-filter="outsiders">外来者</button>
-                    <button class="filter-btn" data-filter="minions">爪牙</button>
-                    <button class="filter-btn" data-filter="demons">恶魔</button>
-                    <button class="filter-btn" data-filter="travelers">旅行者</button>
-                    <button class="filter-btn" data-filter="travelers">传奇角色</button>
-                </div>
+                <input type="text" class="search-box" placeholder="搜索角色名称、能力..." id="searchInput">
             </div>
 
             <div class="characters-grid" id="charactersGrid">
@@ -602,124 +524,70 @@
                 <div class="modal-icon" id="modalIcon">👤</div>
                 <div class="modal-info">
                     <h2 id="modalName">角色名称</h2>
-                    <div class="modal-type" id="modalType">角色类型</div>
+                    <div class="modal-faction" id="modalFaction">阵营</div>
                 </div>
             </div>
-            <div class="modal-ability" id="modalAbility">
-                角色技能描述将在这里显示...
-            </div>
-            <div class="modal-tags" id="modalTags">
-                <!-- 标签将在这里显示 -->
+            
+            <div class="modal-sections">
+                <div class="modal-section">
+                    <h3>能力描述</h3>
+                    <div class="modal-ability" id="modalAbility">
+                        角色技能描述将在这里显示...
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>相克规则</h3>
+                    <div class="sp-rule" id="modalSPRule">
+                        暂无相克规则
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>背景故事</h3>
+                    <div class="flavor-text" id="modalFlavorText">
+                        暂无背景故事
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>标签分类</h3>
+                    <div class="modal-tags" id="modalTags">
+                        <!-- 标签将在这里显示 -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // 角色数据
-        const characters = [
-            {
-                id: 1,
-                name: "洗衣妇",
-                type: "镇民",
-                icon: "https://clocktower-wiki.gstonegames.com/images/thumb/4/45/Washerwoman.png/200px-Washerwoman.png",
-                iconType: "image", // emoji 或 image
-                ability: "在你的首个夜晚，你会得知两名玩家和一个镇民角色：这两名玩家之一是该角色。",
-                tags: ["暗流涌动", "获取信息", "进场能力"],
-                category: "townsfolk"
-            },
-            {
-                id: 2,
-                name: "守卫",
-                type: "镇民",
-                icon: "🛡️",
-                iconType: "emoji",
-                ability: "每个夜晚，你可以选择一名玩家（包括你自己）保护其免受恶魔攻击。",
-                tags: ["保护类", "夜晚行动", "防御"],
-                category: "townsfolk"
-            },
-            {
-                id: 3,
-                name: "小恶魔",
-                type: "恶魔",
-                icon: "😈",
-                iconType: "emoji",
-                ability: "每个夜晚，你可以选择一名玩家杀死。如果你杀死了一名爪牙，你会失去能力。",
-                tags: ["击杀类", "夜晚行动", "恶魔"],
-                category: "demons"
-            },
-            {
-                id: 4,
-                name: "间谍",
-                type: "爪牙",
-                icon: "🕵️",
-                iconType: "emoji",
-                ability: "你可能被登记为镇民，即使你实际上是爪牙。",
-                tags: ["伪装类", "被动技能", "爪牙"],
-                category: "minions"
-            },
-            {
-                id: 5,
-                name: "酒鬼",
-                type: "外来者",
-                icon: "🍺",
-                iconType: "emoji",
-                ability: "你认为是镇民，但实际上你可能不是。你的能力可能无法正常工作。",
-                tags: ["混乱类", "被动技能", "外来者"],
-                category: "outsiders"
-            },
-            {
-                id: 6,
-                name: "掘墓人",
-                type: "镇民",
-                icon: "⚰️",
-                iconType: "emoji",
-                ability: "当一名玩家死亡时，你可以查看他们的角色牌。",
-                tags: ["信息类", "被动技能", "死亡触发"],
-                category: "townsfolk"
-            },
-            {
-                id: 7,
-                name: "隐士",
-                type: "外来者",
-                icon: "🏔️",
-                iconType: "emoji",
-                ability: "你可能被登记为镇民，即使你实际上是外来者。",
-                tags: ["伪装类", "被动技能", "外来者"],
-                category: "outsiders"
-            },
-            {
-                id: 8,
-                name: "红唇女郎",
-                type: "爪牙",
-                icon: "💋",
-                iconType: "emoji",
-                ability: "每个夜晚，你可以选择一名玩家。如果该玩家今晚死亡，你会死亡。",
-                tags: ["操控类", "夜晚行动", "爪牙"],
-                category: "minions"
-            },
-            // 示例：使用本地图片的角色
-            {
-                id: 9,
-                name: "示例角色",
-                type: "镇民",
-                icon: "images/fortune-teller.png", // 本地图片路径
-                iconType: "image",
-                ability: "这是一个使用本地图片图标的示例角色。",
-                tags: ["示例", "本地图片"],
-                category: "townsfolk"
-            },
-            // 示例：使用网络图片URL的角色
-            {
-                id: 10,
-                name: "网络图片角色",
-                type: "镇民",
-                icon: "https://example.com/character-icon.png", // 网络图片URL
-                iconType: "image",
-                ability: "这是一个使用网络图片URL的示例角色。",
-                tags: ["示例", "网络图片"],
-                category: "townsfolk"
+        // 角色数据（将从JSON文件加载）
+        let characters = [];
+
+        // 从JSON文件加载角色数据
+        async function loadCharacters() {
+            try {
+                const response = await fetch('characters.json');
+                characters = await response.json();
+                renderCharacters();
+            } catch (error) {
+                console.error('加载角色数据失败:', error);
+                // 如果加载失败，使用默认数据
+                characters = [
+                    {
+                        id: 0,
+                        name: "未找到角色",
+                        icon: "https://clocktower-wiki.gstonegames.com/images/thumb/a/a7/Townsfolk.png/120px-Townsfolk.png",
+                        faction: "镇民",
+                        ability: "",
+                        tags: [],
+                        flavorText: "",
+                        spRule: ""
+                    }
+                ];
+                renderCharacters();
             }
-        ];
+        }
 
         // 渲染角色卡片
         function renderCharacters(charactersToRender = characters) {
@@ -731,20 +599,17 @@
                 card.className = 'character-card';
                 card.onclick = () => showCharacterModal(character);
                 
-                // 根据图标类型生成不同的HTML
-                const iconHTML = character.iconType === 'image' 
-                    ? `<img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">`
-                    : character.icon;
-                
                 card.innerHTML = `
                     <div class="character-header">
-                        <div class="character-icon">${iconHTML}</div>
+                        <div class="character-icon">
+                            <img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">
+                        </div>
                         <div class="character-info">
                             <h3>${character.name}</h3>
-                            <div class="character-type">${character.type}</div>
+                            <div class="character-faction">${character.faction}</div>
                         </div>
                     </div>
-                    <div class="character-ability">${character.ability}</div>
+                    <div class="character-ability">${character.ability.replace(/\n/g, '<br>')}</div>
                     <div class="character-tags">
                         ${character.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                     </div>
@@ -759,20 +624,21 @@
             const modal = document.getElementById('characterModal');
             const modalIcon = document.getElementById('modalIcon');
             const modalName = document.getElementById('modalName');
-            const modalType = document.getElementById('modalType');
+            const modalFaction = document.getElementById('modalFaction');
             const modalAbility = document.getElementById('modalAbility');
+            const modalSPRule = document.getElementById('modalSPRule');
+            const modalFlavorText = document.getElementById('modalFlavorText');
             const modalTags = document.getElementById('modalTags');
 
-            // 根据图标类型设置模态框图标
-            if (character.iconType === 'image') {
-                modalIcon.innerHTML = `<img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">`;
-            } else {
-                modalIcon.textContent = character.icon;
-            }
+            // 设置图标
+            modalIcon.innerHTML = `<img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">`;
 
+            // 填充基本信息
             modalName.textContent = character.name;
-            modalType.textContent = character.type;
-            modalAbility.textContent = character.ability;
+            modalFaction.textContent = character.faction;
+            modalAbility.innerHTML = character.ability.replace(/\n/g, '<br>');
+            modalSPRule.textContent = character.spRule || '暂无相克规则';
+            modalFlavorText.innerHTML = (character.flavorText || '暂无背景故事').replace(/\n/g, '<br>');
             modalTags.innerHTML = character.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
             modal.style.display = 'block';
@@ -792,30 +658,6 @@
             });
         }
 
-        // 筛选功能
-        function setupFilters() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // 移除所有活动状态
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // 添加当前按钮的活动状态
-                    button.classList.add('active');
-                    
-                    const filter = button.getAttribute('data-filter');
-                    let filteredCharacters;
-                    
-                    if (filter === 'all') {
-                        filteredCharacters = characters;
-                    } else {
-                        filteredCharacters = characters.filter(character => character.category === filter);
-                    }
-                    
-                    renderCharacters(filteredCharacters);
-                });
-            });
-        }
-
         // 模态框关闭功能
         function setupModal() {
             const modal = document.getElementById('characterModal');
@@ -832,45 +674,28 @@
             };
         }
 
-        // 移动端侧边栏功能
-        function setupMobileSidebar() {
-            const menuToggle = document.getElementById('menuToggle');
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            const sidebar = document.getElementById('sidebar');
+        // 设置可收起功能
+        function setupCollapsible() {
+            const collapsibles = document.querySelectorAll('.collapsible');
             
-            if (menuToggle && sidebarToggle && sidebar) {
-                menuToggle.addEventListener('click', () => {
-                    sidebar.classList.add('active');
+            collapsibles.forEach(collapsible => {
+                collapsible.addEventListener('click', () => {
+                    const targetId = collapsible.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    
+                    // 切换收起状态
+                    collapsible.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
                 });
-                
-                sidebarToggle.addEventListener('click', () => {
-                    sidebar.classList.remove('active');
-                });
-                
-                // 点击侧边栏外部关闭
-                document.addEventListener('click', (e) => {
-                    if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
-                        sidebar.classList.remove('active');
-                    }
-                });
-                
-                // 点击侧边栏链接后关闭侧边栏
-                const sidebarLinks = sidebar.querySelectorAll('a');
-                sidebarLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        sidebar.classList.remove('active');
-                    });
-                });
-            }
+            });
         }
 
         // 初始化
         document.addEventListener('DOMContentLoaded', () => {
-            renderCharacters();
+            loadCharacters();
             setupSearch();
-            setupFilters();
             setupModal();
-            setupMobileSidebar();
+            setupCollapsible();
         });
     </script>
 </body>
