@@ -499,28 +499,28 @@
             const modalTags = document.getElementById('modalTags');
 
             // 设置图标
-            modalIcon.innerHTML = `<img src="${character。icon}" alt="${character。name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">`;
+            modalIcon.innerHTML = `<img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">`;
 
             // 填充基本信息
-            modalName.textContent = character。name;
-            modalFaction.textContent = character。faction;
+            modalName.textContent = character.name;
+            modalFaction.textContent = character.faction;
             modalAbility.innerHTML = character.ability.replace(/\n/g, '<br>');
-            modalSPRule。textContent = character。spRule || '暂无相克规则';
-            modalFlavorText。innerHTML = (character。flavorText || '暂无背景故事')。替换(/\n/g， '<br>');
-            modalTags。innerHTML = character。标签。map(tag => `<span class="tag">${tag}</span>`)。join('');
+            modalSPRule.textContent = character.spRule || '暂无相克规则';
+            modalFlavorText.innerHTML = (character.flavorText || '暂无背景故事').replace(/\n/g, '<br>');
+            modalTags.innerHTML = character.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
-            modal。style。display = 'block';
+            modal.style.display = 'block';
         }
 
         // 搜索功能
         function setupSearch() {
-            const searchInput = document。getElementById('searchInput');
-            searchInput。addEventListener('input'， (e) => {
-                const searchTerm = e。target。value。toLowerCase();
-                const filteredCharacters = 字符.filter(character => 
-                    character。name。toLowerCase()。includes(searchTerm) ||
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredCharacters = characters.filter(character => 
+                    character.name.toLowerCase().includes(searchTerm) ||
                     character.ability.toLowerCase().includes(searchTerm) ||
-                    character。标签。some(tag => tag.toLowerCase()。includes(searchTerm))
+                    character.tags.some(tag => tag.toLowerCase().includes(searchTerm))
                 );
                 renderCharacters(filteredCharacters);
             });
@@ -528,11 +528,11 @@
 
         // 模态框关闭功能
         function setupModal() {
-            const modal = document。getElementById('characterModal');
-            const closeBtn = document。querySelector('.close');
+            const modal = document.getElementById('characterModal');
+            const closeBtn = document.querySelector('.close');
             
-            closeBtn。onclick = () => {
-                modal。style.display = 'none';
+            closeBtn.onclick = () => {
+                modal.style.display = 'none';
             };
             
             window.onclick = (event) => {
