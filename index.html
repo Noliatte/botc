@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>血染钟楼速查百科by Noliatte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+
+
+        .main-container {
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 0 2rem;
+        }
+
+
+
+        .content {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .search-section {
+            margin-bottom: 2rem;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .character-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .character-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .character-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .character-icon {
+            width: 60px;
+            height: 60px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            overflow: hidden;
+        }
+
+        .character-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .character-info h3 {
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+
+        .character-faction {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .character-ability {
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            white-space: pre-line;
+        }
+
+        .character-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #e8f4fd;
+            color: #3498db;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-icon {
+            width: 80px;
+            height: 80px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            overflow: hidden;
+        }
+
+        .modal-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .modal-info h2 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-faction {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .modal-sections {
+            margin-top: 1.5rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .modal-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-left: 3px solid #3498db;
+            padding-left: 0.8rem;
+        }
+
+        .modal-ability {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            line-height: 1.6;
+            border-left: 4px solid #3498db;
+            white-space: pre-line;
+        }
+
+        .sp-rule {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            line-height: 1.6;
+            border-left: 4px solid #e74c3c;
+            white-space: pre-line;
+        }
+
+        .flavor-text {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            font-style: italic;
+            color: #666;
+            line-height: 1.6;
+            border-left: 4px solid #9b59b6;
+            white-space: pre-line;
+        }
+
+        .modal-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 0 1rem;
+                margin: 1rem auto;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .characters-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .character-card {
+                padding: 1rem;
+            }
+            
+            .character-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .character-info h3 {
+                font-size: 1.1rem;
+            }
+            
+            .character-ability {
+                font-size: 0.9rem;
+            }
+            
+            .search-box {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .modal-content {
+                margin: 10% auto;
+                padding: 1.5rem;
+                width: 95%;
+            }
+            
+            .modal-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .modal-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .modal-sections {
+                margin-top: 1rem;
+            }
+            
+            .modal-section {
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0 0.5rem;
+            }
+            
+            .header-content {
+                padding: 0 0.5rem;
+            }
+            
+            .content {
+                padding: 0.8rem;
+            }
+            
+            .character-card {
+                padding: 0.8rem;
+            }
+            
+            .character-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .character-icon {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+            
+            .search-box {
+                padding: 0.7rem;
+                font-size: 0.8rem;
+            }
+            
+            .tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="main-container">
+        <main class="content">
+            <div class="search-section">
+                <input type="text" class="search-box" placeholder="搜索关键词" id="searchInput">
+            </div>
+
+            <div class="characters-grid" id="charactersGrid">
+                <!-- 角色卡片将通过JavaScript动态生成 -->
+            </div>
+        </main>
+    </div>
+
+    <!-- 角色详情模态框 -->
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon">👤</div>
+                <div class="modal-info">
+                    <h2 id="modalName">角色名称</h2>
+                    <div class="modal-faction" id="modalFaction">阵营</div>
+                </div>
+            </div>
+            
+            <div class="modal-sections">
+                <div class="modal-section">
+                    <h3>能力描述</h3>
+                    <div class="modal-ability" id="modalAbility">
+                        角色技能描述将在这里显示...
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>相克规则</h3>
+                    <div class="sp-rule" id="modalSPRule">
+                        暂无相克规则
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>背景故事</h3>
+                    <div class="flavor-text" id="modalFlavorText">
+                        暂无背景故事
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>标签分类</h3>
+                    <div class="modal-tags" id="modalTags">
+                        <!-- 标签将在这里显示 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 角色数据（将从JSON文件加载）
+        let characters = [];
+
+        // 从JSON文件加载角色数据
+        async function loadCharacters() {
+            try {
+                const response = await fetch('characters.json');
+                characters = await response.json();
+                renderCharacters();
+            } catch (error) {
+                console.error('加载角色数据失败:', error);
+                // 如果加载失败，使用默认数据
+                characters = [
+                    {
+                        id: 0,
+                        name: "未找到角色",
+                        icon: "https://clocktower-wiki.gstonegames.com/images/thumb/a/a7/Townsfolk.png/120px-Townsfolk.png",
+                        faction: "镇民",
+                        ability: "",
+                        tags: [],
+                        flavorText: "",
+                        spRule: ""
+                    }
+                ];
+                renderCharacters();
+            }
+        }
+
+        // 渲染角色卡片
+        function renderCharacters(charactersToRender = characters) {
+            const grid = document.getElementById('charactersGrid');
+            grid.innerHTML = '';
+
+            charactersToRender.forEach(character => {
+                const card = document.createElement('div');
+                card.className = 'character-card';
+                card.onclick = () => showCharacterModal(character);
+                
+                card.innerHTML = `
+                    <div class="character-header">
+                        <div class="character-icon">
+                            <img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">
+                        </div>
+                        <div class="character-info">
+                            <h3>${character.name}</h3>
+                            <div class="character-faction">${character.faction}</div>
+                        </div>
+                    </div>
+                    <div class="character-ability">${character.ability.replace(/\n/g, '<br>')}</div>
+                    <div class="character-tags">
+                        ${character.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // 显示角色详情模态框
+        function showCharacterModal(character) {
+            const modal = document.getElementById('characterModal');
+            const modalIcon = document.getElementById('modalIcon');
+            const modalName = document.getElementById('modalName');
+            const modalFaction = document.getElementById('modalFaction');
+            const modalAbility = document.getElementById('modalAbility');
+            const modalSPRule = document.getElementById('modalSPRule');
+            const modalFlavorText = document.getElementById('modalFlavorText');
+            const modalTags = document.getElementById('modalTags');
+
+            // 设置图标
+            modalIcon.innerHTML = `<img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">`;
+
+            // 填充基本信息
+            modalName.textContent = character.name;
+            modalFaction.textContent = character.faction;
+            modalAbility.innerHTML = character.ability.replace(/\n/g, '<br>');
+            modalSPRule.textContent = character.spRule || '暂无相克规则';
+            modalFlavorText.innerHTML = (character.flavorText || '暂无背景故事').replace(/\n/g, '<br>');
+            modalTags.innerHTML = character.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+            modal.style.display = 'block';
+        }
+
+        // 搜索功能
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredCharacters = characters.filter(character => 
+                    character.name.toLowerCase().includes(searchTerm) ||
+                    character.ability.toLowerCase().includes(searchTerm) ||
+                    character.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+                );
+                renderCharacters(filteredCharacters);
+            });
+        }
+
+        // 模态框关闭功能
+        function setupModal() {
+            const modal = document.getElementById('characterModal');
+            const closeBtn = document.querySelector('.close');
+            
+            closeBtn.onclick = () => {
+                modal.style.display = 'none';
+            };
+            
+            window.onclick = (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        }
+
+
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCharacters();
+            setupSearch();
+            setupModal();
+        });
+    </script>
+</body>
+</html>
