@@ -121,6 +121,12 @@
             color: #f44336;
         }
 
+        /* 旅行角色faction样式 */
+        .character-faction.travel {
+            background: #f3e5f5;
+            color: #9c27b0;
+        }
+
         .character-ability {
             color: #555;
             line-height: 1.5;
@@ -137,6 +143,13 @@
 
         /* 邪恶角色样式 */
         .character-ability.evil {
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* 旅行角色样式 */
+        .character-ability.travel {
             background-color: white;
             padding: 0.5rem;
             border-radius: 4px;
@@ -166,6 +179,12 @@
         .tag.evil {
             background: #ffebee;
             color: #f44336;
+        }
+
+        /* 旅行角色标签样式 */
+        .tag.travel {
+            background: #f3e5f5;
+            color: #9c27b0;
         }
 
         .modal {
@@ -257,6 +276,12 @@
             color: #f44336;
         }
 
+        /* 模态框中旅行角色faction样式 */
+        .modal-faction.travel {
+            background: #f3e5f5;
+            color: #9c27b0;
+        }
+
         .modal-flavor-brief {
             color: #888;
             font-size: 0.85rem;
@@ -318,6 +343,12 @@
         .modal-ability.evil {
             background: #f8f9fa;
             border-left: 4px solid #f44336;
+        }
+
+        /* 模态框中旅行角色能力样式 */
+        .modal-ability.travel {
+            background: #f8f9fa;
+            border-left: 4px solid #9c27b0;
         }
 
 
@@ -560,7 +591,7 @@
                 card.onclick = () => showCharacterModal(character);
                 
                 // 根据camp字段确定样式类
-                const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : '';
+                const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : character.camp === '旅行' ? 'travel' : '';
                 
                 card.innerHTML = `
                     <div class="character-header">
@@ -598,7 +629,7 @@
             modalIcon.innerHTML = `<img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">`;
 
             // 根据camp字段确定样式类
-            const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : '';
+            const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : character.camp === '旅行' ? 'travel' : '';
             
             // 填充基本信息
             modalName.textContent = character.name;
