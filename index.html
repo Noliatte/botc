@@ -98,10 +98,7 @@
 
         .character-info h3 {
             color: #2c3e50;
-            margin-bottom: 0.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .character-faction {
@@ -134,7 +131,6 @@
         /* 善良角色样式 */
         .character-ability.good {
             background-color: white;
-            border-left: 4px solid #2196f3;
             padding: 0.5rem;
             border-radius: 4px;
         }
@@ -142,7 +138,6 @@
         /* 邪恶角色样式 */
         .character-ability.evil {
             background-color: white;
-            border-left: 4px solid #f44336;
             padding: 0.5rem;
             border-radius: 4px;
         }
@@ -236,11 +231,14 @@
         .modal-info h2 {
             color: #2c3e50;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .modal-faction {
             color: #666;
-            font-size: 1rem;
+            font-size: 0.9rem;
             margin-bottom: 0.5rem;
             padding: 0.25rem 0.5rem;
             border-radius: 12px;
@@ -312,13 +310,13 @@
 
         /* 模态框中善良角色能力样式 */
         .modal-ability.good {
-            background: white;
+            background: #f8f9fa;
             border-left: 4px solid #2196f3;
         }
 
         /* 模态框中邪恶角色能力样式 */
         .modal-ability.evil {
-            background: white;
+            background: #f8f9fa;
             border-left: 4px solid #f44336;
         }
 
@@ -487,8 +485,10 @@
             <div class="modal-header">
                 <div class="modal-icon" id="modalIcon">👤</div>
                 <div class="modal-info">
-                    <h2 id="modalName">角色名称</h2>
-                    <div class="modal-faction" id="modalFaction">阵营</div>
+                    <h2 id="modalNameContainer">
+                        <span id="modalName">角色名称</span>
+                        <span class="modal-faction" id="modalFaction">阵营</span>
+                    </h2>
                     <div class="modal-flavor-brief" id="modalFlavorBrief">暂无背景故事</div>
                 </div>
             </div>
@@ -568,7 +568,8 @@
                             <img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">
                         </div>
                         <div class="character-info">
-                            <h3>${character.name}<span class="character-faction ${campClass}">${character.faction}</span></h3>
+                            <h3>${character.name}</h3>
+                            <div class="character-faction ${campClass}">${character.faction}</div>
                         </div>
                     </div>
                     <div class="character-ability ${campClass}">${character.ability.replace(/\n/g, '<br>')}</div>
@@ -596,14 +597,14 @@
             // 设置图标
             modalIcon.innerHTML = `<img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">`;
 
+            // 根据camp字段确定样式类
+            const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : '';
+            
             // 填充基本信息
             modalName.textContent = character.name;
             modalFaction.textContent = character.faction;
             modalFaction.className = `modal-faction ${campClass}`;
             modalFlavorBrief.innerHTML = (character.flavorText || '暂无背景故事').replace(/\n/g, '<br>');
-            
-            // 根据camp字段确定样式类
-            const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : '';
             
             // 设置模态框中的角色能力样式
             modalAbility.className = `modal-ability ${campClass}`;
