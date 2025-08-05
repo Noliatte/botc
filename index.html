@@ -99,11 +99,29 @@
         .character-info h3 {
             color: #2c3e50;
             margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .character-faction {
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        /* 善良角色faction样式 */
+        .character-faction.good {
+            background: #e3f2fd;
+            color: #2196f3;
+        }
+
+        /* 邪恶角色faction样式 */
+        .character-faction.evil {
+            background: #ffebee;
+            color: #f44336;
         }
 
         .character-ability {
@@ -111,6 +129,22 @@
             line-height: 1.5;
             margin-bottom: 1rem;
             white-space: pre-line;
+        }
+
+        /* 善良角色样式 */
+        .character-ability.good {
+            background-color: white;
+            border-left: 4px solid #2196f3;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* 邪恶角色样式 */
+        .character-ability.evil {
+            background-color: white;
+            border-left: 4px solid #f44336;
+            padding: 0.5rem;
+            border-radius: 4px;
         }
 
         .character-tags {
@@ -125,6 +159,18 @@
             padding: 0.25rem 0.5rem;
             border-radius: 12px;
             font-size: 0.8rem;
+        }
+
+        /* 善良角色标签样式 */
+        .tag.good {
+            background: #e3f2fd;
+            color: #2196f3;
+        }
+
+        /* 邪恶角色标签样式 */
+        .tag.evil {
+            background: #ffebee;
+            color: #f44336;
         }
 
         .modal {
@@ -196,6 +242,21 @@
             color: #666;
             font-size: 1rem;
             margin-bottom: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        /* 模态框中善良角色faction样式 */
+        .modal-faction.good {
+            background: #e3f2fd;
+            color: #2196f3;
+        }
+
+        /* 模态框中邪恶角色faction样式 */
+        .modal-faction.evil {
+            background: #ffebee;
+            color: #f44336;
         }
 
         .modal-flavor-brief {
@@ -249,14 +310,19 @@
             white-space: pre-line;
         }
 
-        .sp-rule {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            line-height: 1.6;
-            border-left: 4px solid #e74c3c;
-            white-space: pre-line;
+        /* 模态框中善良角色能力样式 */
+        .modal-ability.good {
+            background: white;
+            border-left: 4px solid #2196f3;
         }
+
+        /* 模态框中邪恶角色能力样式 */
+        .modal-ability.evil {
+            background: white;
+            border-left: 4px solid #f44336;
+        }
+
+
 
         .hint-text {
             background: #fff8e1;
@@ -429,7 +495,7 @@
             
             <div class="modal-sections">
                 <div class="modal-section">
-                    <h3>能力描述</h3>
+                    <h3>角色能力</h3>
                     <div class="modal-ability" id="modalAbility">
                         角色技能描述将在这里显示...
                     </div>
@@ -442,15 +508,10 @@
                     </div>
                 </div>
 
-                <div class="modal-section" id="spRuleSection" style="display: none;">
-                    <h3>相克规则</h3>
-                    <div class="sp-rule" id="modalSPRule">
-                        暂无相克规则
-                    </div>
-                </div>
+
 
                 <div class="modal-section">
-                    <h3>标签分类</h3>
+                    <h3>标签</h3>
                     <div class="modal-tags" id="modalTags">
                         <!-- 标签将在这里显示 -->
                     </div>
@@ -481,7 +542,7 @@
                         ability: "",
                         tags: [],
                         flavorText: "",
-                        spRule: ""
+
                     }
                 ];
                 renderCharacters();
@@ -498,19 +559,21 @@
                 card.className = 'character-card';
                 card.onclick = () => showCharacterModal(character);
                 
+                // 根据camp字段确定样式类
+                const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : '';
+                
                 card.innerHTML = `
                     <div class="character-header">
                         <div class="character-icon">
                             <img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">
                         </div>
                         <div class="character-info">
-                            <h3>${character.name}</h3>
-                            <div class="character-faction">${character.faction}</div>
+                            <h3>${character.name}<span class="character-faction ${campClass}">${character.faction}</span></h3>
                         </div>
                     </div>
-                    <div class="character-ability">${character.ability.replace(/\n/g, '<br>')}</div>
+                    <div class="character-ability ${campClass}">${character.ability.replace(/\n/g, '<br>')}</div>
                     <div class="character-tags">
-                        ${character.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        ${character.tags.map(tag => `<span class="tag ${campClass}">${tag}</span>`).join('')}
                     </div>
                 `;
                 
@@ -528,8 +591,6 @@
             const modalAbility = document.getElementById('modalAbility');
             const hintSection = document.getElementById('hintSection');
             const modalHint = document.getElementById('modalHint');
-            const spRuleSection = document.getElementById('spRuleSection');
-            const modalSPRule = document.getElementById('modalSPRule');
             const modalTags = document.getElementById('modalTags');
 
             // 设置图标
@@ -538,7 +599,14 @@
             // 填充基本信息
             modalName.textContent = character.name;
             modalFaction.textContent = character.faction;
+            modalFaction.className = `modal-faction ${campClass}`;
             modalFlavorBrief.innerHTML = (character.flavorText || '暂无背景故事').replace(/\n/g, '<br>');
+            
+            // 根据camp字段确定样式类
+            const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : '';
+            
+            // 设置模态框中的角色能力样式
+            modalAbility.className = `modal-ability ${campClass}`;
             modalAbility.innerHTML = character.ability.replace(/\n/g, '<br>');
             
             // 处理上帝小贴士
@@ -549,15 +617,9 @@
                 hintSection.style.display = 'none';
             }
             
-            // 处理相克规则
-            if (character.spRule) {
-                spRuleSection.style.display = 'block';
-                modalSPRule.innerHTML = character.spRule.replace(/\n/g, '<br>');
-            } else {
-                spRuleSection.style.display = 'none';
-            }
+
             
-            modalTags.innerHTML = character.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+            modalTags.innerHTML = character.tags.map(tag => `<span class="tag ${campClass}">${tag}</span>`).join('');
 
             modal.style.display = 'block';
         }
