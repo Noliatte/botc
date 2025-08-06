@@ -558,11 +558,35 @@
         // 从JSON文件加载角色数据
         async function loadCharacters() {
             try {
-                const response = await fetch('characters.json');
-                characters = await response.json();
+                // 显示加载状态
+                showLoadingState();
+                
+                // 首先加载脚本配置文件
+                const scriptsResponse = await fetch('scripts.json');
+                const scriptsConfig = await scriptsResponse.json();
+                
+                // 并发加载所有脚本文件
+                const scriptResponses = await Promise.all(
+                    scriptsConfig.scripts.map(script => fetch(script.filename))
+                );
+                
+                // 解析所有JSON数据
+                const scriptDataArrays = await Promise.all(
+                    scriptResponses.map(response => response.json())
+                );
+                
+                // 合并所有角色数据
+                characters = scriptDataArrays.flat();
+                
+                // 隐藏加载状态并渲染角色
+                hideLoadingState();
                 renderCharacters();
+                
+                console.log(`成功加载 ${scriptsConfig.scripts.length} 个剧本，共 ${characters.length} 个角色`);
             } catch (error) {
                 console.error('加载角色数据失败:', error);
+                hideLoadingState();
+                
                 // 如果加载失败，使用默认数据
                 characters = [
                     {
@@ -572,12 +596,41 @@
                         faction: "镇民",
                         ability: "",
                         tags: [],
-                        flavorText: "",
+                        flavorText: "加载角色数据时出现错误，请检查网络连接或联系管理员。",
 
                     }
                 ];
                 renderCharacters();
             }
+        }
+
+        // 显示加载状态
+        function showLoadingState() {
+            const grid = document.getElementById('charactersGrid');
+            grid.innerHTML = `
+                <div style="text-align: center; padding: 2rem; grid-column: 1 / -1;">
+                    <div style="font-size: 1.2rem; color: #666; margin-bottom: 1rem;">正在加载角色数据...</div>
+                    <div style="display: inline-block; width: 20px; height: 20px; border: 3px solid #f3f3f3; border-top: 3px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                </div>
+            `;
+            
+            // 添加旋转动画样式
+            if (!document.getElementById('loadingStyles')) {
+                const style = document.createElement('style');
+                style.id = 'loadingStyles';
+                style.textContent = `
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+
+        // 隐藏加载状态
+        function hideLoadingState() {
+            // 加载状态会在renderCharacters时被替换
         }
 
         // 渲染角色卡片
@@ -666,8 +719,7 @@
                     character.id.toLowerCase().includes(searchTerm) ||
                     character.faction.toLowerCase().includes(searchTerm) ||
                     character.script.toLowerCase().includes(searchTerm) ||
-                    character.tags.some(tag => tag.toLowerCase().includes(searchTerm))||
-                    character.nicks.some(nick => nick.toLowerCase().includes(searchTerm))
+                    character.tags.some(tag => tag.toLowerCase().includes(searchTerm))
                 );
                 renderCharacters(filteredCharacters);
             });

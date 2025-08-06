@@ -1,0 +1,21 @@
+[
+    {
+        "id": "Doomsayer",
+        "name": "末日预言者",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/6/6c/Doomsayer.png/200px-Doomsayer.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "如果大于等于四名玩家存活，每名当前存活的玩家可以公开要求你杀死一名与他阵营相同的玩家（每名玩家限一次）。",
+        "tags": [
+            "额外死亡",
+            "公开触发能力",
+            "限次能力",
+            "传奇角色"
+        ],
+        "flavorText": "而在第七天，洪水和瘟疫将席卷渡鸦村！死者终会复活，生者将遭挫折！哦！真是天灾人祸啊！哦！真是不幸的一天！只有付出巨大的牺牲才能熬过这一切！诺斯特罗斯的贤者是这么说的，我也是这么说的。",
+        "script": "传奇角色",
+        "nicks": [
+            "doomsayer"
+        ]
+      }
+]

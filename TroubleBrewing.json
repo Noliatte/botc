@@ -1,0 +1,417 @@
+[
+    {
+        "id": "Washerwoman",
+        "name": "洗衣妇",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/4/45/Washerwoman.png/200px-Washerwoman.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "在你的首个夜晚，你会得知两名玩家和一个镇民角色：这两名玩家之一是该角色。",
+        "tags": [
+            "获取信息",
+            "进场能力",
+            "暗流涌动"
+        ],
+        "flavorText": "晚礼服上的血渍？\n才不是呢，这只是洒上了雪莉酒。真粗心！",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Librarian",
+        "name": "图书管理员",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/5/55/Librarian.png/200px-Librarian.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "在你的首个夜晚，你会得知两名玩家和一个外来者角色：这两名玩家之一是该角色（或者你会得知没有外来者在场）。",
+        "tags": [
+            "获取信息",
+            "进场能力",
+            "暗流涌动"
+        ],
+        "flavorText": "毫无疑问，这位女士，在通常情况下，你可以从图书馆的馆藏中借阅《凶恶药典》。\n然而，你看起来不像是会员。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Investigator",
+        "name": "调查员",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/c/cb/Investigator.png/200px-Investigator.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "在你的首个夜晚，你会得知两名玩家和一个爪牙角色：这两名玩家之一是该角色（或者你会得知没有爪牙在场）。",
+        "tags": [
+            "获取信息",
+            "进场能力",
+            "暗流涌动"
+        ],
+        "flavorText": "这真是个散步的好夜晚，您说呢，莫罗佐夫先生？\n还是我应该称呼您为……莫罗佐夫男爵？",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Chef",
+        "name": "厨师",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/e/e5/Chef.png/200px-Chef.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "在你的首个夜晚，你会得知场上邻座的邪恶玩家有多少对。",
+        "tags": [
+            "获取信息",
+            "进场能力",
+            "邻近",
+            "暗流涌动"
+        ],
+        "flavorText": "今晚的预约有些古怪。我从未见过梅威瑟太太此前跟那个哈德逊巷的流氓有过交情。\n然而今晚，他们订了一张双人桌。真奇怪。",
+        "hint": "在厨师的单次能力探查中，同一互动干扰类角色始终保持同一阵营。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Empath",
+        "name": "共情者",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/4/4e/Empath.png/200px-Empath.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "每个夜晚，你会得知与你邻近的两名存活的玩家中邪恶玩家的数量。",
+        "tags": [
+            "获取信息",
+            "邻近",
+            "暗流涌动"
+        ],
+        "flavorText": "我的皮肤有些刺痛。\n这有些不太对劲。我能感觉得到。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "FortuneTeller",
+        "name": "占卜师",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/6/67/Fortuneteller.png/200px-Fortuneteller.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "每个夜晚，你要选择两名玩家：你会得知他们之中是否有恶魔。\n会有一名善良玩家始终被你的能力当作恶魔。",
+        "tags": [
+            "获取信息",
+            "进场能力",
+            "持续检测型能力",
+            "互动干扰",
+            "暗流涌动"
+        ],
+        "flavorText": "我在你的灵魂中感受到了庞大的恶意！\n但……那可能只是你的香水味道。我对接骨木汁过敏。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Undertaker",
+        "name": "送葬者",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/c/c7/Undertaker.png/200px-Undertaker.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "每个夜晚*，你会得知今天白天死于处决的玩家的角色。",
+        "tags": [
+            "获取信息",
+            "处决",
+            "回溯型能力",
+            "暗流涌动"
+        ],
+        "flavorText": "嗯……看看我们发现了什么？左靴到足跟都有磨损，靴尖下还有些硝石屑。这是军人才会有的装束。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Monk",
+        "name": "僧侣",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/4/44/Monk.png/200px-Monk.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "每个夜晚*，你要选择除你以外的一名玩家：当晚恶魔的负面能力对他无效。",
+        "tags": [
+            "保护",
+            "免死",
+            "暗流涌动"
+        ],
+        "flavorText": "今夜吹来的是一股邪恶又致命的风。\n来吧，我的同胞，这风暴过于肆虐，来修道院找寻庇佑吧。\n我保证，我会用性命，护你周全。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Ravenkeeper",
+        "name": "守鸦人",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/3/37/Ravenkeeper.png/200px-Ravenkeeper.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "如果你在夜晚死亡，你会被唤醒，然后你要选择一名玩家：你会得知他的角色。",
+        "tags": [
+            "获取信息",
+            "死亡触发能力",
+            "暗流涌动"
+        ],
+        "flavorText": "我的鸟儿们会替我复仇的！飞吧！飞吧，我尽职的小可爱！\n去到庄园和溪边！去到小巷和集会所里！快飞吧！",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Virgin",
+        "name": "贞洁者",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/4/43/Virgin.png/200px-Virgin.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "当你首次被提名时，如果提名你的玩家是镇民，他立刻被处决。",
+        "tags": [
+            "提名",
+            "处决",
+            "限次能力",
+            "暗流涌动"
+        ],
+        "flavorText": "我是纯洁的。就让那些无罪之人匍匐在地，替我受苦吧。我的名誉不应被你恶毒的指控所玷污。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Slayer",
+        "name": "猎手",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/6/6e/Slayer.png/200px-Slayer.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "每局游戏限一次，你可以在白天时公开选择一名玩家：如果他是恶魔，他死亡。",
+        "tags": [
+            "公开触发能力",
+            "额外死亡",
+            "限次能力",
+            "暗流涌动"
+        ],
+        "flavorText": "受死吧。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Soldier",
+        "name": "士兵",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/7/7b/Soldier.png/200px-Soldier.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "恶魔的负面能力对你无效。",
+        "tags": [
+            "保护",
+            "免死",
+            "暗流涌动"
+        ],
+        "flavorText": "就像大卫对歌利亚所说，\n像忒修斯对米诺陶所说，\n也像阿周那对福授所说的那样……\n绝不。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Mayor",
+        "name": "镇长",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/2/20/Mayor.png/200px-Mayor.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "如果只有三名玩家存活且白天没有人被处决，你的阵营获胜。\n如果你在夜晚即将死亡，可能会有一名其他玩家代替你死亡。",
+        "tags": [
+            "免死",
+            "处决",
+            "特殊胜利失败条件",
+            "暗流涌动"
+        ],
+        "flavorText": "我们必须抛开分歧，停止这种毫无意义的杀戮。\n毕竟，我们都是纳税人。嗯，我是说我们中的绝大多数。",
+        "hint": "镇长的替死能力本质为改变能力作用的目标。\n数学家对中毒或醉酒的镇长的判定应尽量统一。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Butler",
+        "name": "管家",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/8/82/Butler.png/200px-Butler.png",
+        "faction": "外来者",
+        "camp": "善良",
+        "ability": "每个夜晚，你要选择除你以外的一名玩家：明天白天，只有他投票时你才能投票。",
+        "tags": [
+            "投票",
+            "暗流涌动"
+        ],
+        "flavorText": "是的，先生……不对，先生……当然，先生。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Drunk",
+        "name": "酒鬼",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/1/14/Drunk.png/200px-Drunk.png",
+        "faction": "外来者",
+        "camp": "善良",
+        "ability": "你不知道你是酒鬼。你以为你是一个镇民角色，但其实你不是。",
+        "tags": [
+            "认知覆盖",
+            "设置调整",
+            "暗流涌动"
+        ],
+        "flavorText": "我是个只在社交场合里~嗝儿~喝酒的人，亲爱的。\n但无可否认，我是一个非常~嗝儿~擅长社交的人。",
+        "hint": "酒鬼可以被看作醉酒状态，即使他并没有醉酒。\n允许说书人在酒鬼的认知范围内（认为自己是善良的镇民）做任何程度上的欺骗。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Recluse",
+        "name": "陌客",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/0/02/Recluse.png/200px-Recluse.png",
+        "faction": "外来者",
+        "camp": "善良",
+        "ability": "你可能会被当作邪恶阵营、爪牙角色或恶魔角色，即使你已死亡。",
+        "tags": [
+            "互动干扰",
+            "死后能力保留",
+            "暗流涌动"
+        ],
+        "flavorText": "侬康康窝咦锅惹，咋锅就怼窝恁锅粗暴。介样叭行。麻绳添酒嘿料，泥滴燕绳恨舔没，窝这哈圆酿泥料！侬晓得伐！窝叭象载康岛泥鸟，辣过饿魔阔能揍载窝家边乱晃。呔！窝揍斯弄个以斯！",
+        "hint": "陌客的互动干扰能力中，阵营与角色是独立判断的。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Saint",
+        "name": "圣徒",
+        "faction": "外来者",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/b/bc/Saint.png/200px-Saint.png",
+        "ability": "如果你死于处决，你的阵营落败。",
+        "tags": [
+            "处决",
+            "特殊胜利失败条件",
+            "死亡触发能力",
+            "暗流涌动"
+        ],
+        "flavorText": "智慧带来和平。耐心孕育智慧。\n无需惧怕，因为恐惧消散的那一天终将到来。\n让我们一同祈祷，愿我们愿景一致，共赴圣洁。",
+        "hint": "照看小怪宝的圣徒如果作为场上最后一名存活的恶魔被处决，善良阵营会获胜。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Poisoner",
+        "name": "投毒者",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/7/74/Poisoner.png/200px-Poisoner.png",
+        "ability": "每个夜晚，你要选择一名玩家：他会中毒到下个黄昏。",
+        "tags": [
+            "中毒",
+            "暗流涌动"
+        ],
+        "flavorText": "将α化合物加入到β化合物中……\n别！太！多！",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Spy",
+        "name": "间谍",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/3/36/Spy.png/200px-Spy.png",
+        "ability": "每个夜晚，你能查看魔典。\n你可能会被当作善良阵营、镇民角色或外来者角色，即使你已死亡。",
+        "tags": [
+            "获取信息",
+            "互动干扰",
+            "死后能力保留",
+            "暗流涌动"
+        ],
+        "flavorText": "每个调酒大师心中明白\n配方没有麻烦来得更快\n双面间谍是麻烦的主菜",
+        "hint": "间谍的互动干扰能力中，阵营与角色是独立判断的。\n不建议让间谍得知除正常提示标记以外的信息，如自定义笔记。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "ScarletWoman",
+        "name": "红唇女郎",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/a/ac/Scarletwoman.png/200px-Scarletwoman.png",
+        "ability": "如果大于等于五名玩家存活时（旅行者不计算在内）恶魔死亡，你变成那个恶魔。",
+        "tags": [
+            "角色变化",
+            "死亡触发能力",
+            "暗流涌动"
+        ],
+        "flavorText": "你曾向我展示了紫焰议会的秘密。我们也曾一起在烈火里拥抱，在欲望中交欢，在兽性的驱使下耳鬓厮磨，我将永生永世侍奉于你。但今晚，我亲爱的，我是你的主人。",
+        "hint": "小恶魔自杀后建议优先让红唇女郎变为小恶魔。\n当痢蛭的宿主死亡时，如果在宿主死亡之前，场上除旅行者外存活玩家人数为5人，红唇女郎不会因此变成痢蛭。（宿主与痢蛭的死亡并非同时进行的）",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Baron",
+        "name": "男爵",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/4/40/Baron.png/200px-Baron.png",
+        "ability": "会有额外的外来者在场。[+2 外来者]",
+        "tags": [
+            "设置调整",
+            "暗流涌动"
+        ],
+        "flavorText": "这个小镇没救了，不是么？廉价的外来劳动力……这就是问题所在。要我说，我会把他们全部调配到矿井里。不过是稍有些困难的工作，这不会伤害到任何人，要是有人提出反对意见就赏他一记耳光。这就是所谓的底线，不是么？",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Imp",
+        "name": "小恶魔",
+        "faction": "恶魔",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/b/b3/Imp.png/200px-Imp.png",
+        "ability": "每个夜晚*，你要选择一名玩家：他死亡。如果你以这种方式自杀，一名爪牙会变成小恶魔。",
+        "tags": [
+            "角色变化",
+            "死亡触发能力",
+            "暗流涌动"
+        ],
+        "flavorText": "我们必须让自己的头脑保持敏锐，刀刃保持锋利。\n邪恶在我们之中穿行，想要不择手段地摧毁我们的善良。\n那些愚蠢之辈，把我们美丽的小镇给毁了。不要相信任何人。\n但如果你一定要相信某人，请相信我。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Bureaucrat",
+        "name": "官员",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/5/5c/Bureaucrat.png/200px-Bureaucrat.png",
+        "ability": "每个夜晚，你要选择除你以外的一名玩家：明天白天，他的投票算作三票。",
+        "tags": [
+            "投票",
+            "暗流涌动"
+        ],
+        "flavorText": "请在这签名，还有这里，还有这，还…有这。如果每个人的签名都清晰可辨，在今天就应该可以把所有文件都整理统计好。这种简单的文书工作，我们已经很久没犯错了。从昨天中午到现在都没有，如果没记错的话……",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Beggar",
+        "name": "乞丐",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/f/fa/Beggar.png/200px-Beggar.png",
+        "ability": "你只能使用投票标记才能投票。\n死亡的玩家可以将他的投票标记给你，如果他这么做，你会得知他的阵营。\n你不会中毒和醉酒。",
+        "tags": [
+            "投票",
+            "获取信息",
+            "暗流涌动"
+        ],
+        "flavorText": "行行好吧，先生？哪怕是一枚硬币，夫人？谢天谢地，上天保佑！你真是个善良的人！今晚我要好好地吃上一顿，一定要！",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Gunslinger",
+        "name": "枪手",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/c/c2/Gunslinger.png/200px-Gunslinger.png",
+        "ability": "每个白天，当首次投票被统计后，你可以选择一名刚投过票的玩家：他死亡。",
+        "tags": [
+            "投票",
+            "额外死亡",
+            "暗流涌动"
+        ],
+        "flavorText": "是时候得有人自己动手了。那个人…就是我。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Thief",
+        "name": "窃贼",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/f/fc/Thief.png/200px-Thief.png",
+        "ability": "每个夜晚，你要选择除你以外的一名玩家：明天白天他的投票会被算作负数。",
+        "tags": [
+            "投票",
+            "暗流涌动"
+        ],
+        "flavorText": "我可是嘛事儿也没干。昨儿嘛晚我连内个小巷子都没去过！绝不是我偷了布鲁诺镇长的公文包。它内包儿里面儿讷么老些花哨儿纸儿，可太沉了。",
+        "script": "暗流涌动"
+    },
+    {
+        "id": "Scapegoat",
+        "name": "替罪羊",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/0/0b/Scapegoat.png/200px-Scapegoat.png",
+        "ability": "如果你的阵营的一名玩家被处决，你可能会代替他被处决。",
+        "tags": [
+            "处决",
+            "暗流涌动"
+        ],
+        "flavorText": "晚上好！感谢你们邀请我来舞厅。虽然我不是本地人，但你们看起来个个都慈眉善目的，我的天呐。我相信我们一定可以打成一片的。不过这些绳子是干嘛的？",
+        "script": "暗流涌动"
+    }
+]

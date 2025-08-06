@@ -1,0 +1,24 @@
+{
+    "scripts": [
+        {
+            "name": "暗流涌动",
+            "filename": "TroubleBrewing.json"
+        },
+        {
+            "name": "黯月初升",
+            "filename": "BadMoonRising.json"
+        },
+        {
+            "name": "梦殒春宵",
+            "filename": "Sects&Violets.json"
+        },
+        {
+            "name": "实验型角色",
+            "filename": "ExperimentalCharacters.json"
+        },
+        {
+            "name": "传奇角色",
+            "filename": "Fabled.json"
+        }
+    ]
+}

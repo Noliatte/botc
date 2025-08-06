@@ -1,0 +1,493 @@
+[
+    {
+        "id": "Clockmaker",
+        "name": "钟表匠",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/7/74/Clockmaker.png/200px-Clockmaker.png",
+        "ability": "在你的首个夜晚，你会得知恶魔与爪牙之间最近的距离。",
+        "tags": [
+            "获取信息",
+            "进场能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "不要打扰我。时钟的滴答声必须延续下去，它的每一圈循环都象征着生命，它的每一圈循环都包含着世间万物——世间的所有答案——它是一个无比神圣的机器。好了，我必须工作了。",
+        "hint": "邻座的玩家距离为1。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Dreamer",
+        "name": "筑梦师",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/2/29/Dreamer.png/200px-Dreamer.png",
+        "ability": "每个夜晚，你要选择除你及旅行者以外的一名玩家：你会得知一个善良角色和一个邪恶角色，该玩家是其中一个角色。",
+        "tags": [
+            "获取信息",
+            "梦殒春宵"
+        ],
+        "flavorText": "我记得有钟表匠……天空是红色的，有不规则的三角形不断从天上坠落下来。有紫罗兰的气味……还有气泡咕嘟咕嘟的声音。一个眼睛发光、还有着乱糟糟的胡须的女人对着天空发出嘶嘶声。然后，我醒了……",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "SnakeCharmer",
+        "name": "舞蛇人",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/a/ab/Snakecharmer.png/200px-Snakecharmer.png",
+        "ability": "每个夜晚，你要选择一名存活的玩家：如果你选中了恶魔，你和他交换角色和阵营，然后他中毒。",
+        "tags": [
+            "角色变化",
+            "阵营转变",
+            "中毒",
+            "梦殒春宵"
+        ],
+        "flavorText": "这位老爷……虽然我的烟斗是金色的，虽然我只要一首曲子就能驯服最狂野的灯神，但我只是一个卑贱的舞蛇人罢了，哎……听天由命吧。俗话说，人心不足蛇吞象。但不是我，这位老爷……真的不是我。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Mathematician",
+        "name": "数学家",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/0/06/Mathematician.png/200px-Mathematician.png",
+        "ability": "每个夜晚，你会得知有多少名玩家的能力因为其他角色的能力而未正常生效。",
+        "tags": [
+            "获取信息",
+            "回溯型能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "任何连续的，且能进行定量初等运算的形式系统X，都具有不完全性。也就是说，在这个形式系统X内存在一些命题，这些命题既不能被证明为真，也不能被证明为否。所以，你喝醉了。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Flowergirl",
+        "name": "卖花女孩",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/5/5b/Flowergirl.png/200px-Flowergirl.png",
+        "ability": "每个夜晚*，你会得知在今天白天时是否有恶魔投过票。",
+        "tags": [
+            "获取信息",
+            "投票",
+            "回溯型能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "昨天，我的紫罗兰凋谢了。今天，我的罂粟花盛开了。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "TownCrier",
+        "name": "城镇公告员",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/b/b7/Towncrier.png/200px-Towncrier.png",
+        "ability": "每个夜晚*，你会得知在今天白天时是否有爪牙发起过提名。",
+        "tags": [
+            "获取信息",
+            "提名",
+            "回溯型能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "号外！号外！迷宫中的巫术！天才博学者揭露了一切谜团！城镇有危险了！号外！",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Oracle",
+        "name": "神谕者",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/1/17/Oracle.png/200px-Oracle.png",
+        "ability": "每个夜晚*，你会得知有多少名死亡的玩家是邪恶的。",
+        "tags": [
+            "获取信息",
+            "梦殒春宵"
+        ],
+        "flavorText": "唯有受选者才能凝视面纱之外的光景。亡者躁动不安……他们的每一根僵硬的手指都指向了刺骨的北地。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Savant",
+        "name": "博学者",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/5/53/Savant.png/200px-Savant.png",
+        "ability": "每个白天，你可以私下询问说书人以得知两条信息：一个是正确的，一个是错误的。",
+        "tags": [
+            "获取信息",
+            "拜访说书人",
+            "梦殒春宵"
+        ],
+        "flavorText": "地上有七十二根火柴……今天的太阳落得更早，月亮还是按时升起……一块破布……庄园里的邪恶之物……三个又三个……我们相信的事物和他真正看到的不一样……绿光代表镁……残留物，但是图案不太对……地上有七十二根火柴……",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Seamstress",
+        "name": "女裁缝",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/a/ae/Seamstress.png/200px-Seamstress.png",
+        "ability": "每局游戏限一次，在夜晚时，你可以选择除你以外的两名玩家：你会得知他们是否为同一阵营。",
+        "tags": [
+            "获取信息",
+            "限次能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "你听到那个穿羊绒大衣的家伙对我们小贝尔说什么了吗？他说……“好”？哎，行吧，和哈利还有那个杂耍艺人那一出相比，这算不了什么。说什么？我可不说，我又不是什么长舌妇。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Philosopher",
+        "name": "哲学家",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/e/e0/Philosopher.png/200px-Philosopher.png",
+        "ability": "每局游戏限一次，在夜晚时，你可以选择一个善良角色：你获得该角色的能力。\n如果这个角色在场，他醉酒。",
+        "tags": [
+            "获得能力",
+            "限次能力",
+            "持续检测型能力",
+            "醉酒",
+            "梦殒春宵"
+        ],
+        "flavorText": "如果你要说什么事情是最真实的？我想是啤酒。痛快喝吧，说不定我们明天就要死了。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Artist",
+        "name": "艺术家",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/a/a5/Artist.png/200px-Artist.png",
+        "ability": "每局游戏限一次，在白天时，你可以私下询问说书人一个是非问题，你会得知该问题的答案。",
+        "tags": [
+            "获取信息",
+            "拜访说书人",
+            "限次能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "天啊！多么美妙的作品！我的作品……用你们的话怎么说来着……对，璀璨夺目！栩栩如生！没错！",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Juggler",
+        "name": "杂耍艺人",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/b/be/Juggler.png/200px-Juggler.png",
+        "ability": "在你的首个白天，你可以公开猜测任意玩家的角色最多五次。在当晚，你会得知猜测正确的角色数量。",
+        "tags": [
+            "获取信息",
+            "进场能力",
+            "回溯型能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "下一场表演，我需要一朵花、一袋豆子、一条玩具蛇、一支画笔、和一个电动的树篱修剪机。不过我得和你说，宝贝，这可能是我最后的表演了哦。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Sage",
+        "name": "贤者",
+        "faction": "镇民",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/f/f8/Sage.png/200px-Sage.png",
+        "ability": "如果恶魔杀死了你，在当晚你会被唤醒并得知两名玩家，其中一名是杀死你的那个恶魔。",
+        "tags": [
+            "获取信息",
+            "死亡触发能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "这书山卷海中一定隐藏着秘密，我非常确信！这些秘密就隐藏在这一字一句之间等待着我们发掘。小子！再帮我多拿点蜡烛！还有墨水！虽然这些笔记有些晦涩，但有关恶魔的谜语很快就会被揭晓。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Mutant",
+        "name": "畸形秀演员",
+        "faction": "外来者",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/5/58/Mutant.png/200px-Mutant.png",
+        "ability": "如果你“疯狂”地证明自己是外来者，你可能被处决。",
+        "tags": [
+            "疯狂",
+            "处决",
+            "梦殒春宵"
+        ],
+        "flavorText": "我不是怪物！我是人！求你了！",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Sweetheart",
+        "name": "心上人",
+        "faction": "外来者",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/c/c2/Sweetheart.png/200px-Sweetheart.png",
+        "ability": "当你死亡时，会有一名玩家开始醉酒。",
+        "tags": [
+            "死亡触发能力",
+            "醉酒",
+            "梦殒春宵"
+        ],
+        "flavorText": "我永远也忘不掉她……永远……",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Barber",
+        "name": "理发师",
+        "faction": "外来者",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/3/3a/Barber.png/200px-Barber.png",
+        "ability": "如果你死亡，在当晚恶魔可以选择两名玩家（不能选择其他恶魔）交换角色。",
+        "tags": [
+            "死亡触发能力",
+            "角色变化",
+            "暴露角色",
+            "梦殒春宵"
+        ],
+        "flavorText": "对了，你以前知不知道，理发师和手术医生其实是同一个职业？不知道？那现在你知道了。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Klutz",
+        "name": "呆瓜",
+        "faction": "外来者",
+        "camp": "善良",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/f/f6/Klutz.png/200px-Klutz.png",
+        "ability": "当你得知你死亡时，你要公开选择一名存活的玩家：如果他是邪恶的，你的阵营落败。",
+        "tags": [
+            "死亡触发能力",
+            "公开触发能力",
+            "特殊胜利失败条件",
+            "梦殒春宵"
+        ],
+        "flavorText": "哎哟！",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "EvilTwin",
+        "name": "镜像双子",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/8/8e/Eviltwin.png/200px-Eviltwin.png",
+        "ability": "你与一名对立阵营的玩家互相知道对方是什么角色。\n如果其中善良玩家被处决，邪恶阵营获胜。\n如果你们都存活，善良阵营无法获胜。",
+        "tags": [
+            "暴露角色",
+            "进场能力",
+            "获取信息",
+            "处决",
+            "特殊胜利失败条件",
+            "梦殒春宵"
+        ],
+        "flavorText": "我不是小美！我是小梅！她才是小美！小美才是那个坏人，不是我！",
+        "hint": "混合剧本中建议分别唤醒镜像双子。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Witch",
+        "name": "女巫",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/e/e6/Witch.png/200px-Witch.png",
+        "ability": "每个夜晚，你要选择一名玩家：如果他明天白天发起提名，他死亡。如果只有三名存活的玩家，你失去此能力。",
+        "tags": [
+            "额外死亡",
+            "提名",
+            "持续检测型能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "山羊之血，三滴落下。一绺头发，怒意迸发。名字被说出，阴影被放大。左脚踏上荆棘路，莫要回头看它。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Cerenovus",
+        "name": "洗脑师",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/4/4d/Cerenovus.png/200px-Cerenovus.png",
+        "ability": "每个夜晚，你要选择一名玩家和一个善良角色。他明天白天和夜晚需要“疯狂”地证明自己是这个角色，不然他可能被处决。",
+        "tags": [
+            "疯狂",
+            "处决",
+            "暴露角色",
+            "梦殒春宵"
+        ],
+        "flavorText": "所谓的现实，其实，只是一种想法罢了。具体点来说，是我的想法。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Pithag",
+        "name": "麻脸巫婆",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/d/de/Pithag.png/200px-Pithag.png",
+        "ability": "每个夜晚*，你要选择一名玩家和一个角色，如果该角色不在场，他变成该角色。如果因此创造了一个恶魔，当晚的死亡由说书人决定。",
+        "tags": [
+            "角色变化",
+            "免死",
+            "额外死亡",
+            "梦殒春宵"
+        ],
+        "flavorText": "绕釜环行火融融，毒肝腐脏寘其中。\n蛤蟆蛰眠寒石底，三十一日夜相继；\n汗出淋漓化毒浆，投之鼎釜沸为汤。",
+        "hint": "麻脸巫婆创造多名恶魔后，未被说书人杀死的恶魔仍要行动，且说书人不能阻止恶魔能力中导致死亡以外的其他效果。对于死亡来源，恶魔选择的目标建议来源为该恶魔，未被恶魔选择的目标死亡来源为麻脸巫婆。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "FangGu",
+        "name": "方古",
+        "faction": "恶魔",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/9/97/Fanggu.png/200px-Fanggu.png",
+        "ability": "每个夜晚*，你要选择一名玩家：他死亡。\n被该能力杀死的外来者改为变成邪恶的方古且你代替他死亡，但每局游戏仅能成功转化一次。[+1 外来者]",
+        "tags": [
+            "角色变化",
+            "阵营转变",
+            "限次能力",
+            "设置调整",
+            "梦殒春宵"
+        ],
+        "flavorText": "你那高墙和锐器不过是虚无缥缈的泡影。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Vigormortis",
+        "name": "亡骨魔",
+        "faction": "恶魔",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/f/fc/Vigormortis.png/200px-Vigormortis.png",
+        "ability": "每个夜晚*，你要选择一名玩家：他死亡。\n被你杀死的爪牙保留他的能力，且与他邻近的两名镇民之一中毒。[-1 外来者]",
+        "tags": [
+            "死后能力保留",
+            "中毒",
+            "邻近",
+            "持续检测型能力",
+            "设置调整",
+            "梦殒春宵"
+        ],
+        "flavorText": "世间万扉集为一体，世间万匙铸为一身。世间万盅将与我共饮，但凡饮下我所赐圣水者，必将永不干渴，化作万孔泉眼涌作永生。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "NoDashii",
+        "name": "诺-达鲺",
+        "faction": "恶魔",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/1/16/Nodashii.png/200px-Nodashii.png",
+        "ability": "每个夜晚*，你要选择一名玩家：他死亡。\n与你邻近的两名镇民中毒。",
+        "tags": [
+            "中毒",
+            "邻近",
+            "持续检测型能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "彼因汝之罪孽，吾已嗅汝之恶臭满溢全身。时日曷丧？予及汝皆亡。竖子命如草芥，以吾之力，使汝终末于深海，终于此良夜。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Vortox",
+        "name": "涡流",
+        "faction": "恶魔",
+        "camp": "邪恶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/7/78/Vortox.png/200px-Vortox.png",
+        "ability": "每个夜晚*，你要选择一名玩家：他死亡。\n镇民玩家的能力都会产生错误信息。\n如果白天没人被处决，邪恶阵营获胜。",
+        "tags": [
+            "能力效果干扰",
+            "处决",
+            "特殊胜利失败条件",
+            "梦殒春宵"
+        ],
+        "flavorText": "黑白颠倒，对错不再，左右变换，长短无猜。万物紊乱无可寻，短视死亡把命栽，何处寻答？随我来。",
+        "script": "梦殒春宵"
+    },
+    {
+        "id": "Deviant",
+        "name": "怪咖",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/d/d5/Deviant.png/200px-Deviant.png",
+        "ability": "如果你表现得很有趣，当天你不能被流放。",
+        "tags": [
+            "免死",
+            "梦殒春宵"
+        ],
+        "flavorText": "这句好笑的话确实是那位女士说的。",
+        "script": "梦殒春宵",
+        "nicks": [
+            "deviant"
+        ]
+    },
+    {
+        "id": "BoneCollector",
+        "name": "骷髅",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/4/48/Bonecollector.png/200px-Bonecollector.png",
+        "ability": "每局游戏限一次，在夜晚时*，你可以选择一名死亡的玩家：他重新获得能力直到下个黄昏。",
+        "tags": [
+            "限次能力",
+            "获得能力",
+            "梦殒春宵"
+        ],
+        "flavorText": "我收集了很多东西。头发、牙齿、衣服、诗歌片段以及失散恋人的美梦。还有我的秘密艺术品，你想看的话那可得给点小费，一点点就可以。如果你能给我带来一些月圆之夜死于悲痛的贵妇人的血，你就会得到你想要的答案。",
+        "script": "梦殒春宵",
+        "nicks": [
+            "bone collector"
+        ]
+    },
+    {
+        "id": "Barista",
+        "name": "咖啡师",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/0/05/Barista.png/200px-Barista.png",
+        "ability": "每个夜晚，直至下个黄昏，由说书人二选一：1）一名玩家解除并免受醉酒和中毒影响，且会得知正确信息；2）一名玩家的能力可以生效两次。该玩家会得知是哪个效果。",
+        "tags": [
+            "能力效果干扰",
+            "获得能力",
+            "暴露角色",
+            "梦殒春宵"
+        ],
+        "flavorText": "一杯不加奶油的咖啡，先生？我真的很抱歉，我们刚刚用完了所有的奶油——一杯不加牛奶的咖啡怎样？",
+        "script": "梦殒春宵",
+        "nicks": [
+            "barista"
+        ]
+    },
+    {
+        "id": "Harlot",
+        "name": "流莺",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/8/89/Harlot.png/200px-Harlot.png",
+        "ability": "每个夜晚*，你要选择一名存活的玩家：如果他同意，你会得知他的角色，但是你们两个可能同时死亡。",
+        "tags": [
+            "获取信息",
+            "额外死亡",
+            "暴露角色",
+            "梦殒春宵"
+        ],
+        "flavorText": "认得侬老开心额，水手。你好像有些烦心事想告诉我，对嘛对嘛，而我就是一个很棒棒的聆听者。",
+        "script": "梦殒春宵",
+        "nicks": [
+            "harlot",
+            "妓女"
+        ]
+    },
+    {
+        "id": "Butcher",
+        "name": "屠夫",
+        "faction": "旅行者",
+        "camp": "旅行",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/f/fb/Butcher.png/200px-Butcher.png",
+        "ability": "每个白天，首次处决后，你可以再次发起提名。",
+        "tags": [
+            "提名",
+            "处决",
+            "额外死亡",
+            "梦殒春宵"
+        ],
+        "flavorText": "这口感好像鸡肉……请再来一份。",
+        "script": "梦殒春宵",
+        "nicks": [
+            "butcher"
+        ]
+    }
+]
