@@ -49,7 +49,7 @@
         "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/e/ee/Bountyhunter.png/200px-Bountyhunter.png",
         "faction": "镇民",
         "camp": "善良",
-        "ability": "在你的首个夜晚，你会得知一名邪恶玩家。\n每当你得知的玩家死亡，你会在当晚得知另一名邪恶玩家。\n[会有一名镇民转变为邪恶阵营]",
+        "ability": "在你的首个夜晚，你会得知一名邪恶玩家。\n每当你得知的玩家死亡，你会在当晚得知另一名邪恶玩家。\n[ 会有一名镇民转变为邪恶阵营 ]",
         "tags": ["获取信息", "进场能力", "回溯型能力", "阵营转变", "设置调整", "死亡触发能力"],
         "flavorText": "我一个人在这铺满腐败恶臭的街道上行走着。邪恶不请自来，在我的鼻腔里蠕动，将厌恶点燃，将期待烧光。这个令人不悦的地方一天比一天更加病态。而我……我会是这些罪恶的解药。",
         "script": "实验性角色"
@@ -117,7 +117,7 @@
         "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/3/3d/Marionette.png/200px-Marionette.png",
         "faction": "爪牙",
         "camp": "邪恶",
-        "ability": "你以为你是一个善良角色，但其实你不是。恶魔会知道你是提线木偶。\n[提线木偶会与恶魔邻座]",
+        "ability": "你以为你是一个善良角色，但其实你不是。恶魔会知道你是提线木偶。\n[ 提线木偶会与恶魔邻座 ]",
         "tags": ["认知覆盖", "设置调整", "暴露角色", "邻近"],
         "flavorText": "给出命令，下达命令。只需要这样做就足够了。",
         "script": "实验性角色"
@@ -361,7 +361,7 @@
         "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/d/d7/Atheist.png/200px-Atheist.png",
         "faction": "镇民",
         "camp": "善良",
-        "ability": "说书人可以打破游戏规则，如果说书人被处决，善良阵营获胜，即使你已死亡。[无邪恶角色在场]",
+        "ability": "说书人可以打破游戏规则，如果说书人被处决，善良阵营获胜，即使你已死亡。\n[ 无邪恶角色在场 ]",
         "tags": ["死后能力保留", "处决", "特殊胜利失败条件", "设置调整"],
         "flavorText": "让我们驱散这不必要的猜忌和愚蠢的妄想吧。这发生的一切都有一个完全合理的解释。是的，现在正有一个茶杯在围绕着地球旋转，它太小了，所以你们都无法看见。但我会真实地用我的手端起这真实的瓷器，饮下这茶。",
         "script": "实验性角色"
@@ -453,6 +453,39 @@
         "hint": "“他们都存活”这一条件只关注选择结算后玩家是否存活。",
         "tags": ["额外死亡", "复活", "暴露角色"],
         "flavorText": "沉默是金。",
+        "script": "实验性角色"
+    },
+    {
+        "id": "Legion",
+        "name": "军团",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/2/25/Legion.png/200px-Legion.png",
+        "faction": "恶魔",
+        "camp": "邪恶",
+        "ability": "每个夜晚*，可能有一名玩家死亡。如果一项提名只有邪恶玩家投票，投票无效。你也会被当作是爪牙。\n[ 多数玩家为军团 ]",
+        "tags": ["投票", "设置调整", "互动干扰"],
+        "flavorText": "我们是冬日刺骨的寒风。我们是无月之夜的阴影。我们是你茶里的毒药，是你耳边的低语。我们无处不在。",
+        "script": "实验性角色"
+    },
+    {
+        "id": "StormCatcher",
+        "name": "暴风捕手",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/3/30/Stormcatcher.png/200px-Stormcatcher.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "游戏开始时，你要宣布一个善良角色。如果该角色在场，他只能死于处决，但所有邪恶玩家会在首个夜晚得知他是哪一名玩家。",
+        "tags": ["暴露角色", "进场能力", "免死", "处决"],
+        "flavorText": "在黎明时分，庙宇那被拉长的影子爬上了泉眼。而在黄昏时分，方尖塔将刺目的红光遮挡，让拱道下方的暖流冷却。所有的线索都汇聚于此。风暴将至，而在这苹果树之间，这耀眼、葱翠又圣洁的地方，定是那暴风眼。",
+        "script": "实验性角色"
+    },
+    {
+        "id": "Ferryman",
+        "name": "摆渡人",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/c/c8/Ferryman.png/200px-Ferryman.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "在游戏的最后一天，所有已死亡玩家会重新获得投票标记。",
+        "tags": ["投票"],
+        "flavorText": "当正义的梦想到来之时，它会带着真理的重量。",
         "script": "实验性角色"
     }
 ]
