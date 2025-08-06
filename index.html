@@ -127,6 +127,12 @@
             color: #9c27b0;
         }
 
+        /* 传奇角色faction样式 */
+        .character-faction.fabled {
+            background: #fff8e1;
+            color: #e65100;
+        }
+
         .character-ability {
             color: #555;
             line-height: 1.5;
@@ -150,6 +156,13 @@
 
         /* 旅行角色样式 */
         .character-ability.travel {
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* 传奇角色样式 */
+        .character-ability.fabled {
             background-color: white;
             padding: 0.5rem;
             border-radius: 4px;
@@ -185,6 +198,12 @@
         .tag.travel {
             background: #f3e5f5;
             color: #9c27b0;
+        }
+
+        /* 传奇角色标签样式 */
+        .tag.fabled {
+            background: #fff8e1;
+            color: #e65100;
         }
 
         .modal {
@@ -282,6 +301,12 @@
             color: #9c27b0;
         }
 
+        /* 模态框中传奇角色faction样式 */
+        .modal-faction.fabled {
+            background: #fff8e1;
+            color: #e65100;
+        }
+
         .modal-flavor-brief {
             color: #888;
             font-size: 0.85rem;
@@ -349,6 +374,12 @@
         .modal-ability.travel {
             background: #f8f9fa;
             border-left: 4px solid #9c27b0;
+        }
+
+        /* 模态框中传奇角色能力样式 */
+        .modal-ability.fabled {
+            background: #f8f9fa;
+            border-left: 4px solid #e65100;
         }
 
 
@@ -644,7 +675,7 @@
                 card.onclick = () => showCharacterModal(character);
                 
                 // 根据camp字段确定样式类
-                const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : character.camp === '旅行' ? 'travel' : '';
+                const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : character.camp === '旅行' ? 'travel' : character.camp === '传奇' ? 'fabled' : '';
                 
                 card.innerHTML = `
                     <div class="character-header">
@@ -682,7 +713,7 @@
             modalIcon.innerHTML = `<img src="${character.icon}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='👤';">`;
 
             // 根据camp字段确定样式类
-            const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : character.camp === '旅行' ? 'travel' : '';
+            const campClass = character.camp === '善良' ? 'good' : character.camp === '邪恶' ? 'evil' : character.camp === '旅行' ? 'travel' : character.camp === '传奇' ? 'fabled' : '';
             
             // 填充基本信息
             modalName.textContent = character.name;
