@@ -663,9 +663,11 @@
                 const searchTerm = e.target.value.toLowerCase();
                 const filteredCharacters = characters.filter(character => 
                     character.name.toLowerCase().includes(searchTerm) ||
+                    character.id.toLowerCase().includes(searchTerm) ||
                     character.faction.toLowerCase().includes(searchTerm) ||
                     character.script.toLowerCase().includes(searchTerm) ||
-                    character.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+                    character.tags.some(tag => tag.toLowerCase().includes(searchTerm))||
+                    character.nicks.some(nick => nick.toLowerCase().includes(searchTerm))
                 );
                 renderCharacters(filteredCharacters);
             });
