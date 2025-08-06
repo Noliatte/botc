@@ -251,7 +251,7 @@
         "faction": "爪牙",
         "camp": "邪恶",
         "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/d/dd/Godfather.png/200px-Godfather.png",
-        "ability": "在你的首个夜晚，你会得知有哪些外来者角色在场。\n如果有外来者在白天死亡，你会在当晚被唤醒并且你要选择一名玩家：他死亡。[-1或+1 外来者]",
+        "ability": "在你的首个夜晚，你会得知有哪些外来者角色在场。\n如果有外来者在白天死亡，你会在当晚被唤醒并且你要选择一名玩家：他死亡。\n[-1或+1 外来者]",
         "tags": [
             "获取信息",
             "进场能力",
