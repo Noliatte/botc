@@ -6,13 +6,135 @@
         "faction": "传奇角色",
         "camp": "传奇",
         "ability": "如果大于等于四名玩家存活，每名当前存活的玩家可以公开要求你杀死一名与他阵营相同的玩家（每名玩家限一次）。",
-        "tags": [
-            "额外死亡",
-            "公开触发能力",
-            "限次能力",
-            "传奇角色"
-        ],
+        "tags": ["额外死亡", "公开触发能力", "限次能力", "传奇角色"],
         "flavorText": "而在第七天，洪水和瘟疫将席卷渡鸦村！死者终会复活，生者将遭挫折！哦！真是天灾人祸啊！哦！真是不幸的一天！只有付出巨大的牺牲才能熬过这一切！诺斯特罗斯的贤者是这么说的，我也是这么说的。",
-        "script": "传奇角色"
-      }
+        "script": ""
+    },
+    {
+        "id": "Toymaker",
+        "name": "玩具匠",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/3/30/Toymaker.png/200px-Toymaker.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "恶魔可以在夜晚选择放弃攻击（每局游戏至少一次）。邪恶玩家照常获取初始信息。",
+        "hint": "为汀西维尔类剧本设计，用于延长游戏时间。",
+        "tags": ["进场能力", "限次能力"],
+        "flavorText": "它会发出声音！会自己下楼！还可以在夜里为你提供温暖！它尝起来像糖果！孩子们都喜欢它！隆重介绍…这就是全新的，温暖的-巴兹-乌兹-行走机器人装置！适合全年龄段！",
+        "script": ""
+    },
+    {
+        "id": "Angel",
+        "name": "天使",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/8/83/Angel.png/200px-Angel.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "对新玩家的死亡负最大责任的人，可能会遭遇一些不好的事情。",
+        "tags": [],
+        "flavorText": "让无罪之人勇于向我所选之人举起手，因为成倍的风暴之怒以及正义终会降临在这群傻瓜身上。",
+        "script": ""
+    },
+    {
+        "id": "Buddhist",
+        "name": "佛教徒",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/6/6b/Buddhist.png/200px-Buddhist.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "每个白天的前两分钟老玩家不能发言。",
+        "tags": [],
+        "flavorText": "人生在世如身处荆棘之中，心不动，人不妄动，不动则不伤。",
+        "script": ""
+    },
+    {
+        "id": "Revolutionary",
+        "name": "革命者",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/a/ac/Revolutionary.png/200px-Revolutionary.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "公开声明一对邻座玩家本局游戏一直保持同一阵营。每局游戏限一次，他们中的一人可能被当作其他的角色/阵营。",
+        "tags": ["邻近", "互动干扰", "限次能力"],
+        "flavorText": "团结，假装的。分裂，就拖延。",
+        "script": ""
+    },
+    {
+        "id": "HellsLibrarian",
+        "name": "地狱藏书员",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/6/69/Hellslibrarian.png/200px-Hellslibrarian.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "当说书人宣布安静时，仍在说话的玩家可能会遭遇一些不好的事情。",
+        "tags": [],
+        "flavorText": "嘘……请安静。最好不要打扰到藏书员，我知道他脾气可不小。",
+        "script": ""
+    },
+    {
+        "id": "Fiddler",
+        "name": "小提琴手",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/f/fc/Fiddler.png/200px-Fiddler.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "每局游戏限一次，恶魔可以秘密选择一名对立阵营的玩家，所有玩家要表决：这两名玩家中谁的阵营获胜。（平局邪恶阵营获胜）",
+        "tags": ["特殊胜利失败条件", "限次能力"],
+        "flavorText": "我敢用命打赌你在小提琴比赛中肯定赢不了我，你这个独眼的呆子！我们之后再一起出去好好地喝上一杯，享受酒吧里的绝伦美曲，沉浸其中，直到隔天醒来连为什么我的鞋子会套在你的脚上都不知道。",
+        "script": ""
+    },
+    {
+        "id": "Fibbin",
+        "name": "骗人精",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/9/90/Fibbin.png/200px-Fibbin.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "每局游戏限一次，一名善良玩家可能会得知“有问题”的信息。",
+        "hint": "“有问题”的信息不一定指错误信息。\n骗人精只能被添加在自定义剧本中。",
+        "tags": ["能力效果干扰", "限次能力"],
+        "flavorText": "嘻嘻嘻，哈，嘻嘻。",
+        "script": ""
+    },
+    {
+        "id": "Duchess",
+        "name": "公爵夫人",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/1/12/Duchess.png/200px-Duchess.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "每个白天，三名玩家可以一起拜访你。当晚*，他们会得知他们之中有几个是邪恶的，但其中一人的信息是错的。",
+        "hint": "实际的运作方式：玩家在白天公开向你表示希望在当晚拜访说书人，如果累计恰好有三名玩家希望拜访则触发能力。\n公爵夫人只能被添加在自定义剧本中。",
+        "tags": ["获取信息", "公开触发能力", "拜访说书人"],
+        "flavorText": "我们会在6点至7点之间招待客人。6点15分喝茶点。6点45分吃松饼。不要迟到，着装要像往常一样正式。",
+        "script": ""
+    },
+    {
+        "id": "Sentinel",
+        "name": "哨兵",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/9/91/Sentinel.png/200px-Sentinel.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "在初始设置时，可能会额外增加或减少一个外来者。",
+        "hint": "哨兵只能被添加在自定义剧本中。",
+        "tags": ["设置调整"],
+        "flavorText": "请提供你的名字，请出示你的证件，请展示你的武器。",
+        "script": ""
+    },
+    {
+        "id": "SpiritOfIvory",
+        "name": "圣洁之魂",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/9/9f/Spiritofivory.png/200px-Spiritofivory.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "游戏过程中邪恶玩家的总数最多能比初始设置多一名。",
+        "hint": "圣洁之魂只能被添加在自定义剧本中。",
+        "tags": [],
+        "flavorText": "荒芜之地传来呼唤，生肉枯骨，落入尘土。是圣洁之魂在生长，是圣洁之魂在注视，是圣洁之魂在引导。人类遵循这一切，否则早已被覆灭。",
+        "script": ""
+    },
+    {
+        "id": "Djinn",
+        "name": "灯神",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/c/c4/Djinn.png/200px-Djinn.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "使用灯神的相克规则。所有玩家都会知道其内容。",
+        "hint": "灯神只能被添加在自定义剧本中。",
+        "tags": ["特殊规则"],
+        "flavorText": "我们并非在此，\n你也未必真实，\n一切神秘皆是幻象难觅，\n茫茫问题好似晴天霹雳。",
+        "script": ""
+    }
 ]
