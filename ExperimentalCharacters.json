@@ -487,5 +487,60 @@
         "tags": ["投票"],
         "flavorText": "当正义的梦想到来之时，它会带着真理的重量。",
         "script": "实验性角色"
+    },
+    {
+        "id": "OrganGrinder",
+        "name": "街头风琴手",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/f/ff/Organgrinder.png/200px-Organgrinder.png",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "ability": "所有玩家在投票时闭眼，且票数会秘密统计。\n每个夜晚，你要选择自己是否醉酒直到下个黄昏。",
+        "tags": ["投票", "暴露角色", "醉酒"],
+        "flavorText": "如果你想让别人听信你的花言巧语，那么就搭配上一段音乐吧。",
+        "script": "实验性角色"
+    },
+    {
+        "id": "Vizier",
+        "name": "维齐尔",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/0/09/Vizier.png/200px-Vizier.png",
+        "faction": "爪牙",
+        "camp": "邪恶",
+        "ability": "所有玩家都知道你是维齐尔。\n你在白天时不会死亡。\n如果一次提名中有善良玩家投票，你可以让被提名者立即被处决。",
+        "tags": ["投票", "处决", "暴露角色", "免死"],
+        "flavorText": "出色的判决，陛下。冲撞主教这样的小罪的确值得您的“正义”与“仁慈”。而您只需要在花园里散散心，参观参观画廊，欣赏欣赏冯·斯特劳夫的雕塑作品。放轻松，陛下。把一切……都交给我。",
+        "script": "实验性角色"
+    },
+    {
+        "id": "Knight",
+        "name": "骑士",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/6/6b/Knight.png/200px-Knight.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "在你的首个夜晚，你会得知两名非恶魔玩家。",
+        "tags": ["进场能力", "获取信息"],
+        "flavorText": "当有人倒下时，他也就谋杀了世界上的某个部分。",
+        "script": "实验性角色"
+    },
+    {
+        "id": "Gardener",
+        "name": "园丁",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/1/19/Gardener.png/200px-Gardener.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "由说书人来为一名或更多玩家派发角色。",
+        "tags": [],
+        "flavorText": "",
+        "script": "实验性角色"
+    },
+    {
+        "id": "Bootlegger",
+        "name": "私货商人",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/9/97/Bootlegger.png/200px-Bootlegger.png",
+        "faction": "传奇角色",
+        "camp": "传奇",
+        "ability": "这个剧本包含有自制角色或自制规则。",
+        "tags": [],
+        "flavorText": "",
+        "script": "实验性角色"
     }
 ]
