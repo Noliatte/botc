@@ -409,14 +409,11 @@
             "梦殒春宵"
         ],
         "flavorText": "这句好笑的话确实是那位女士说的。",
-        "script": "梦殒春宵",
-        "nicks": [
-            "deviant"
-        ]
+        "script": "梦殒春宵"
     },
     {
         "id": "BoneCollector",
-        "name": "骷髅",
+        "name": "集骨者",
         "faction": "旅行者",
         "camp": "旅行",
         "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/4/48/Bonecollector.png/200px-Bonecollector.png",
@@ -427,10 +424,7 @@
             "梦殒春宵"
         ],
         "flavorText": "我收集了很多东西。头发、牙齿、衣服、诗歌片段以及失散恋人的美梦。还有我的秘密艺术品，你想看的话那可得给点小费，一点点就可以。如果你能给我带来一些月圆之夜死于悲痛的贵妇人的血，你就会得到你想要的答案。",
-        "script": "梦殒春宵",
-        "nicks": [
-            "bone collector"
-        ]
+        "script": "梦殒春宵"
     },
     {
         "id": "Barista",
@@ -446,10 +440,7 @@
             "梦殒春宵"
         ],
         "flavorText": "一杯不加奶油的咖啡，先生？我真的很抱歉，我们刚刚用完了所有的奶油——一杯不加牛奶的咖啡怎样？",
-        "script": "梦殒春宵",
-        "nicks": [
-            "barista"
-        ]
+        "script": "梦殒春宵"
     },
     {
         "id": "Harlot",
@@ -465,11 +456,7 @@
             "梦殒春宵"
         ],
         "flavorText": "认得侬老开心额，水手。你好像有些烦心事想告诉我，对嘛对嘛，而我就是一个很棒棒的聆听者。",
-        "script": "梦殒春宵",
-        "nicks": [
-            "harlot",
-            "妓女"
-        ]
+        "script": "梦殒春宵"
     },
     {
         "id": "Butcher",
@@ -485,9 +472,6 @@
             "梦殒春宵"
         ],
         "flavorText": "这口感好像鸡肉……请再来一份。",
-        "script": "梦殒春宵",
-        "nicks": [
-            "butcher"
-        ]
+        "script": "梦殒春宵"
     }
 ]

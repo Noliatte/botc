@@ -752,7 +752,7 @@
                     .filter(paragraph => paragraph.trim()) // 过滤空段落
                     .map(paragraph => {
                         // 移除段落内的换行符，保持段落为单行
-                        const cleanParagraph = paragraph.replace(/\n/g, ' ').trim();
+                        const cleanParagraph = paragraph.replace(/\n/g, '<br>').trim();
                         return `<div style="display: flex; margin-bottom: 0.8rem; line-height: 1.6;"><span style="margin-right: 0.5rem; flex-shrink: 0;">·</span><span style="flex: 1;">${cleanParagraph}</span></div>`;
                     })
                     .join('');
