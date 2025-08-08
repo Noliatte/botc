@@ -13,12 +13,20 @@
             "filename": "Sects&Violets.json"
         },
         {
-            "name": "传奇角色",
-            "filename": "Fabled.json"
-        },
-        {
             "name": "实验型角色",
             "filename": "ExperimentalCharacters.json"
+        },
+        {
+            "name": "华灯初上",
+            "filename": "TempleFair.json"
+        },
+        {
+            "name": "山雨欲来",
+            "filename": "StormComing.json"
+        },
+        {
+            "name": "传奇角色",
+            "filename": "Fabled.json"
         }
     ]
 }

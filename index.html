@@ -746,7 +746,17 @@
             // 处理上帝小贴士
             if (character.hint) {
                 hintSection.style.display = 'block';
-                modalHint.innerHTML = character.hint.replace(/\n/g, '<br>');
+                // 将hint文本按段落分割，为每段添加·符号并进行对齐处理
+                const hintParagraphs = character.hint.split(/\n\s*\n/); // 按空行分割段落
+                const formattedHint = hintParagraphs
+                    .filter(paragraph => paragraph.trim()) // 过滤空段落
+                    .map(paragraph => {
+                        // 移除段落内的换行符，保持段落为单行
+                        const cleanParagraph = paragraph.replace(/\n/g, ' ').trim();
+                        return `<div style="display: flex; margin-bottom: 0.8rem; line-height: 1.6;"><span style="margin-right: 0.5rem; flex-shrink: 0;">·</span><span style="flex: 1;">${cleanParagraph}</span></div>`;
+                    })
+                    .join('');
+                modalHint.innerHTML = formattedHint;
             } else {
                 hintSection.style.display = 'none';
             }

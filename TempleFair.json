@@ -1,0 +1,57 @@
+[
+    {
+        "id": "Banxian",
+        "name": "半仙",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/b/b7/Banxian.png/200px-Banxian.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "任何在夜晚使用自身能力选择你的其他玩家，会改为选中另一名邪恶玩家作为替代。",
+        "tags": ["更换选择目标", "华灯初上"],
+        "flavorText": "平时里见他，要么浑身污垢满嘴臭味，要么疯言疯行不知所云。",
+        "script": "华灯初上"
+    },
+    {
+        "id": "FaceChanger",
+        "name": "变脸师",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/4/49/Bianlianshi.png/200px-Bianlianshi.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "每个白天，如果你“疯狂”地证明自己是一个善良角色（与之前不同），你可能会在当晚获得那个角色的能力，直到下个黄昏。",
+        "tags": ["疯狂", "回溯型能力", "获得能力", "华灯初上"],
+        "flavorText": "台上一分钟，台下十年功。",
+        "script": "华灯初上"
+    },
+    {
+        "id": "Firewatcher",
+        "name": "打更人",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/d/db/Dagengren.png/200px-Dagengren.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "每个夜晚，你要猜测今晚首个死亡的玩家与你的距离。如果你猜测正确，则除你以外的所有玩家今晚不会死亡，但你可能会死亡。",
+        "tags": ["免死", "华灯初上"],
+        "flavorText": "天干物燥，小心火烛！",
+        "script": "华灯初上"
+    },
+    {
+        "id": "Waiter",
+        "name": "店小二",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/8/8d/Dianxiaoer.png/200px-Dianxiaoer.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "在你的首个夜晚，你会得知两名善良玩家。他们之中会有一人醉酒，即使你已死亡。",
+        "tags": ["获取信息", "醉酒", "死后能力保留", "进场能力", "华灯初上"],
+        "flavorText": "客官您里边儿请嘿！是打尖儿呐还是住店啊？",
+        "script": "华灯初上"
+    },
+    {
+        "id": "Diva",
+        "name": "歌伶",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/5/54/Geling.png/200px-Geling.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "每局游戏限一次，在白天时，你可以提议所有玩家观看你的演出，并从同意参加的玩家中选择你的观众。如果恶魔成为了观众，你会在当晚死亡。",
+        "tags": ["公开触发能力", "额外死亡", "限次能力", "回溯型能力", "华灯初上"],
+        "flavorText": "商女不知亡国恨，隔江犹唱后庭花。",
+        "script": "华灯初上"
+    }
+]
