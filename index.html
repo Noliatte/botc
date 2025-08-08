@@ -578,6 +578,25 @@
                         <!-- 标签将在这里显示 -->
                     </div>
                 </div>
+
+                <div class="modal-section">
+                    <h3>钟楼百科</h3>
+                    <div class="wiki-link" id="modalWikiLink">
+                        <a id="wikiLinkButton" href="#" target="_blank" style="
+                            display: inline-block;
+                            padding: 12px 24px;
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                            color: white;
+                            text-decoration: none;
+                            border-radius: 8px;
+                            font-weight: 500;
+                            transition: all 0.3s ease;
+                            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+                        " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.3)'">
+                            📖 查看钟楼百科详情
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -736,6 +755,11 @@
 
             
             modalTags.innerHTML = character.tags.map(tag => `<span class="tag ${campClass}">${tag}</span>`).join('');
+
+            // 设置钟楼百科链接
+            const wikiLinkButton = document.getElementById('wikiLinkButton');
+            const wikiUrl = `https://clocktower-wiki.gstonegames.com/index.php?title=${character.name}`;
+            wikiLinkButton.href = wikiUrl;
 
             modal.style.display = 'block';
         }
