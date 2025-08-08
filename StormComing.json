@@ -1,5 +1,13 @@
 [
     {
-        
+        "id": "BrushHolder",
+        "name": "秉笔",
+        "icon": "https://clocktower-wiki.gstonegames.com/images/thumb/2/2b/Bingbi.png/200px-Bingbi.png",
+        "faction": "镇民",
+        "camp": "善良",
+        "ability": "如果你在白天死亡，当晚你会得知一名善良玩家。\n如果你在夜晚死亡，当晚你会得知一名邪恶玩家。",
+        "tags": ["死亡触发能力", "获取信息", "回溯型能力", "山雨欲来"],
+        "flavorText": "是非曲直，自在人心。",
+        "script": "山雨欲来"
     }
 ]
